@@ -4,42 +4,120 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title – приложение ASP.NET</title>
+    @if (ViewBag.MetaDescription == null)
+    {
+        ViewBag.MetaDescription = "Сургут-Эстейт | Недвижимость, квартиры, коттеджи, таунхаусы, коммерческая недвижимость.";
+    }
+
+    @if (ViewBag.Keywords == null)
+    {
+        ViewBag.Keywords = "Интернет-магазин, Сургут-Эсейт, недвижжимость, квартиры, коттеджи, таунхаусы, коммерческая недвижимость";
+    }
+
+    @if (ViewBag.Title == null)
+    {
+        ViewBag.Title = Html.MvcSiteMap().SiteMapTitle();
+    }
+
+    @if (ViewBag.Page != null)
+    {
+        ViewBag.MetaDescription = ViewBag.MetaDescription + " Cтраница " + ViewBag.Page;
+        ViewBag.Keywords = ViewBag.Keywords + ", страница " + ViewBag.Page;
+        ViewBag.Title = ViewBag.Title + " – страница " + ViewBag.Page;
+    }
+
+    <meta name="description" content="@ViewBag.MetaDescription" />
+
+    <meta name="keywords" content="@ViewBag.Keywords" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Encode+Sans:400,500,600" rel="stylesheet">
+
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/ass")
+
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Имя приложения", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Домашняя страница", "Index", "Home")</li>
-                    <li>@Html.ActionLink("О программе", "About", "Home")</li>
-                    <li>@Html.ActionLink("Контакт", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year – приложение ASP.NET</p>
-        </footer>
-    </div>
+    
+    @Html.Partial("_Header")
 
+    @RenderBody()
+
+    @Html.Partial("_Footer")
+   
+    
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/assets")
+
+
+
+    <!-- JS Global Compulsory -->
+    @*<script src="../../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../../assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
+    <script src="../../assets/vendor/popper.min.js"></script>
+    <script src="../../assets/vendor/bootstrap/bootstrap.min.js"></script>*@
+    <!-- JS Implementing Plugins -->
+    @*<script src="../../assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+    <script src="../../assets/vendor/jquery-ui/ui/widget.js"></script>
+    <script src="../../assets/vendor/jquery-ui/ui/widgets/menu.js"></script>
+    <script src="../../assets/vendor/jquery-ui/ui/widgets/mouse.js"></script>
+    <script src="../../assets/vendor/jquery-ui/ui/widgets/slider.js"></script>
+    <script src="../../assets/vendor/chosen/chosen.jquery.js"></script>
+    <script src="../../assets/vendor/slick-carousel/slick/slick.js"></script>
+    <script src="../../assets/vendor/fancybox/jquery.fancybox.min.js"></script>
+    <!-- JS Unify -->
+    <script src="../../assets/js/hs.core.js"></script>
+    <script src="../../assets/js/components/hs.header.js"></script>
+    <script src="../../assets/js/helpers/hs.hamburgers.js"></script>
+    <script src="../../assets/js/components/hs.dropdown.js"></script>
+    <script src="../../assets/js/components/hs.slider.js"></script>
+    <script src="../../assets/js/components/hs.select.js"></script>
+    <script src="../../assets/js/components/hs.carousel.js"></script>
+    <script src="../../assets/js/components/hs.popup.js"></script>
+    <script src="../../assets/js/components/hs.go-to.js"></script>
+    <!-- JS Customization -->
+    <script src="../../assets/js/custom.js"></script>*@
+    <!-- JS Plugins Init. -->
+    <script>
+      $(document).on('ready', function () {
+        // initialization of header
+        $.HSCore.components.HSHeader.init($('#js-header'));
+        $.HSCore.helpers.HSHamburgers.init('.hamburger');
+
+        // initialization of HSMegaMenu component
+        $('.js-mega-menu').HSMegaMenu({
+          event: 'hover',
+          pageContainer: $('.container'),
+          breakpoint: 991
+        });
+
+        // initialization of HSDropdown component
+        $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
+          afterOpen: function () {
+            $(this).find('input[type="search"]').focus();
+          }
+        });
+
+        // initialization of range slider
+        $.HSCore.components.HSSlider.init('#rangeSlider1');
+
+        // initialization of custom select
+        $.HSCore.components.HSSelect.init('.js-custom-select');
+
+        // initialization of carousel
+        $.HSCore.components.HSCarousel.init('[class*="js-carousel"]');
+
+        // initialization of popups
+        $.HSCore.components.HSPopup.init('.js-fancybox');
+
+        // initialization of go to
+        $.HSCore.components.HSGoTo.init('.js-go-to');
+      });
+    </script>
+
     @RenderSection("scripts", required: false)
 </body>
 </html>

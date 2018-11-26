@@ -1,31 +1,1635 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Поиск недвижимости";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+ <!-- Content -->
+<main>
+    <!-- Promo Block -->
+    <div class="g-bg-cover g-bg-pos-top-center g-bg-img-hero g-bg-cover g-bg-black-opacity-0_3--after g-py-100" style="background-image: url(img-temp/1920x1080/img1.jpg);">
+        <div class="container g-pos-rel g-z-index-1">
+            <div class="g-mb-20">
+                <h1 class="g-color-white g-font-size-40 mb-0">@ViewBag.Title</h1>
+            </div>
+            <div class="g-bg-white g-pa-30">
+                <!-- Input Group -->
+                <form>
+                    <div class="row g-mx-0--md">
+                        <div class="col-md-6 col-lg-8 g-px-0--md g-mb-30">
+                            <input class="form-control rounded-0 g-brd-gray-light-v3 g-px-20 g-py-15" type="text" placeholder="Поиск по Городу, Адресу, Улице ...">
+                        </div>
+                        <!-- Button Group -->
+                        <div class="col-sm-6 col-md-3 col-lg-2 g-px-0--md g-mb-30">
+                            <select class="js-custom-select w-100 h-100 u-select-v1 g-min-width-150 g-brd-left-none--md g-brd-gray-light-v3 g-color-main g-color-primary--hover g-pt-12 g-pb-13" required
+                                    data-placeholder="Любой н/п"
+                                    data-open-icon="fa fa-angle-down"
+                                    data-close-icon="fa fa-angle-up">
+                                <option></option>
+                                <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="NY">Сургут</option>
+                                <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="NR">Солнечный</option>
+                                <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="NTE">Белый Яр</option>
+                                <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="NTW">Снежный</option>
+                                <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="EA">Звездный</option>
+                            </select>
+                        </div>
+                        <!-- End Button Group -->
+                        <!-- Button Group -->
+                        <div class="col-sm-6 col-md-3 col-lg-2 g-px-0--md g-mb-30">
+                            <select class="js-custom-select w-100 h-100 u-select-v1 g-min-width-150 g-brd-left-none--md g-brd-gray-light-v3 g-color-main g-color-primary--hover g-pt-12 g-pb-13" required
+                                    data-placeholder="Любой микрорайон"
+                                    data-open-icon="fa fa-angle-down"
+                                    data-close-icon="fa fa-angle-up">
+                                <option></option>
+                                <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="NR">Микрорайон 1</option>
+                                <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="NTE">Микрорайон 2</option>
+                                <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="NTW">Микрорайон 3</option>
+                                <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="EA">Микрорайон 4</option>
+                                <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="SO">Микрорайон 5</option>
+                                <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="SOE">Микрорайон 5А</option>
+                                <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="SOW">Микрорайон 6</option>
+                                <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="WE">Микрорайон 7</option>
+                            </select>
+                        </div>
+                        <!-- End Button Group -->
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-lg-3 g-mb-30">
+                            <!-- Button Group -->
+                            <div class="input-group-btn">
+                                <select class="js-custom-select u-select-v1 w-100 g-brd-gray-light-v3 g-color-main g-color-primary--hover g-py-12" required
+                                        data-placeholder="Любой вид"
+                                        data-open-icon="fa fa-angle-down"
+                                        data-close-icon="fa fa-angle-up">
+                                    <option></option>
+                                    <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="FR">Аренда</option>
+                                    <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="FS">Продажа</option>
+                                    <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="FC">Новостройки</option>
+                                    <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="NC">Коммерческая недвижимость</option>
+                                    <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="RP">Сниженная цена</option>
+                                </select>
+                            </div>
+                            <!-- End Button Group -->
+                        </div>
+                        <div class="col-6 col-lg-3 g-mb-30">
+                            <!-- Button Group -->
+                            <div class="input-group-btn">
+                                <select class="js-custom-select u-select-v1 w-100 g-brd-gray-light-v3 g-color-main g-color-primary--hover g-py-12" required
+                                        data-placeholder="Любой тип"
+                                        data-open-icon="fa fa-angle-down"
+                                        data-close-icon="fa fa-angle-up">
+                                    <option></option>
+                                    <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="AP">Квартира</option>
+                                    <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="CO">Коттедж</option>
+                                    <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="FA">Новостройка</option>
+                                    <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="LO">Коммерческая недвижимость</option>
+                                    
+                                    <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="TO">Таунхауз</option>
+                                    
+                                </select>
+                            </div>
+                            <!-- End Button Group -->
+                        </div>
+                        <div class="col-6 col-lg-3 g-mb-30">
+                            <!-- Button Group -->
+                            <div class="input-group-btn">
+                                <select class="js-custom-select u-select-v1 w-100 g-brd-gray-light-v3 g-color-main g-color-primary--hover g-py-12" required
+                                        data-placeholder="Комнат"
+                                        data-open-icon="fa fa-angle-down"
+                                        data-close-icon="fa fa-angle-up">
+                                    <option></option>
+                                    <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="1">1</option>
+                                    <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="2">2</option>
+                                    <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="3">3</option>
+                                    <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="4">4</option>
+                                    <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="5">5</option>
+                                    <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="6">6</option>
+                                </select>
+                            </div>
+                            <!-- End Button Group -->
+                        </div>
+                        <div class="col-6 col-lg-3 g-mb-30">
+                            <!-- Button Group -->
+                            <div class="input-group-btn">
+                                <select class="js-custom-select u-select-v1 w-100 g-brd-gray-light-v3 g-color-main g-color-primary--hover g-py-12" required
+                                        data-placeholder="Этаж"
+                                        data-open-icon="fa fa-angle-down"
+                                        data-close-icon="fa fa-angle-up">
+                                    <option></option>
+                                    <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="1">1</option>
+                                    <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="2">2</option>
+                                    <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="3">3</option>
+                                    <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="4">4</option>
+                                    <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="5">5</option>
+                                    <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="6">6</option>
+                                    <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="7">7</option>
+                                    <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="8">8</option>
+                                    <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="9">9</option>
+                                    <option class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active" value="10">10</option>
+                                </select>
+                            </div>
+                            <!-- End Button Group -->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-lg-3 g-mb-30">
+                            <input class="form-control rounded-0 g-brd-gray-light-v3 g-px-20 g-py-15" type="text" placeholder="Мин. (кв.м.)">
+                        </div>
+                        <div class="col-6 col-lg-3 g-mb-30">
+                            <input class="form-control rounded-0 g-brd-gray-light-v3 g-px-20 g-py-15" type="text" placeholder="Макс. (кв.м.)">
+                        </div>
+                        <div class="col-sm-6 col-lg-2 g-mb-30">
+                            <!-- Radio Group -->
+                            <div class="btn-group justified-content">
+                                <label class="u-check">
+                                    <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radGroupBtn1_1" type="radio" checked="">
+                                    <span class="btn btn-md btn-block u-btn-outline-white g-brd-gray-light-v3 g-brd-primary--checked g-color-main g-color-primary--checked g-font-size-default rounded-0 g-py-13">Купить</span>
+                                </label>
+                                <label class="u-check">
+                                    <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radGroupBtn1_1" type="radio">
+                                    <span class="btn btn-md btn-block u-btn-outline-white g-brd-gray-light-v3 g-brd-primary--checked g-color-main g-color-primary--checked g-font-size-default rounded-0 g-py-13">Аренда</span>
+                                </label>
+                            </div>
+                            <!-- End Radio Group -->
+                        </div>
+                        <div class="col-sm-6 col-lg-4 g-mb-30">
+                            <h2 class="h6 g-font-weight-600 mb-4">Разбег цен руб.(<span id="rangeSliderAmount3">0</span>)</h2>
+                            <div id="rangeSlider1" class="u-slider-v1-3"
+                                 data-result-container="rangeSliderAmount3"
+                                 data-range="true"
+                                 data-default="30, 3500000"
+                                 data-min="0"
+                                 data-max="3500000"></div>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <button class="btn btn-block u-btn-primary g-color-white g-bg-primary-dark-v1--hover g-font-weight-600 rounded-0 g-px-18 g-py-15" type="submit">
+                            Поиск
+                        </button>
+                    </div>
+                </form>
+                <!-- End Input Group -->
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    <!-- End Promo Block -->
+    <!-- Category -->
+    <div class="container g-py-100">
+        <ul class="row no-gutters list-inline g-brd-y g-brd-gray-light-v3 g-px-0 mb-0">
+            <!-- Category - List -->
+            <li class="col-6 col-lg-3 list-inline-item u-block-hover g-brd-x g-brd-bottom g-brd-bottom-none--lg g-brd-gray-light-v3 g-mr-0">
+                <a class="d-block g-bg-primary--hover g-text-underline--none--hover g-transition-0_3 g-px-50 g-pt-100 g-pb-50" href="#">
+                    <span class="d-inline-block g-color-text g-color-white-opacity-0_7--hover g-font-size-40 mb-2">
+                        <i class="icon-real-estate-077 u-line-icon-pro"></i>
+                    </span>
+                    <span class="d-block g-color-main g-color-white--hover g-font-weight-500 g-font-size-22">Новостройки</span>
+                    <span class="d-block g-color-text g-color-white--hover g-color-white-opacity-0_7--hover g-mb-70">в Сургуте</span>
+                    <span class="d-block g-color-main g-color-white--hover g-font-size-13">Узнать больше</span>
+                </a>
+            </li>
+            <!-- End Category - List -->
+            <!-- Category - List -->
+            <li class="col-6 col-lg-3 list-inline-item u-block-hover g-brd-right g-brd-bottom g-brd-none--lg g-brd-gray-light-v3 g-mr-0">
+                <a class="d-block g-bg-primary--hover g-text-underline--none--hover g-transition-0_3 g-px-50 g-pt-100 g-pb-50" href="#">
+                    <span class="d-inline-block g-color-text g-color-white-opacity-0_7--hover g-font-size-40 mb-2">
+                        <i class="icon-real-estate-050 u-line-icon-pro"></i>
+                    </span>
+                    <span class="d-block g-color-main g-color-white--hover g-font-weight-500 g-font-size-22">Коммерческая</span>
+                    <span class="d-block g-color-text g-color-white--hover g-color-white-opacity-0_7--hover g-mb-70">недвижимость</span>
+                    <span class="d-block g-color-main g-color-white--hover g-font-size-13">Узнать больше</span>
+                </a>
+            </li>
+            <!-- End Category - List -->
+            <!-- Category - List -->
+            <li class="col-6 col-lg-3 list-inline-item u-block-hover g-brd-x g-brd-gray-light-v3 g-mr-0">
+                <a class="d-block g-bg-primary--hover g-text-underline--none--hover g-transition-0_3 g-px-50 g-pt-100 g-pb-50" href="#">
+                    <span class="d-inline-block g-color-text g-color-white-opacity-0_7--hover g-font-size-40 mb-2">
+                        <i class="icon-real-estate-070 u-line-icon-pro"></i>
+                    </span>
+                    <span class="d-block g-color-main g-color-white--hover g-font-weight-500 g-font-size-22">Коттеджи</span>
+                    <span class="d-block g-color-text g-color-white--hover g-color-white-opacity-0_7--hover g-mb-70">в поселках</span>
+                    <span class="d-block g-color-main g-color-white--hover g-font-size-13">Узнать больше</span>
+                </a>
+            </li>
+            <!-- End Category - List -->
+            <!-- Category - List -->
+            <li class="col-6 col-lg-3 list-inline-item u-block-hover g-brd-right g-brd-gray-light-v3 g-mr-0">
+                <a class="d-block g-bg-primary--hover g-text-underline--none--hover g-transition-0_3 g-px-50 g-pt-100 g-pb-50" href="#">
+                    <span class="d-inline-block g-color-text g-color-white-opacity-0_7--hover g-font-size-40 mb-2">
+                        <i class="icon-real-estate-022 u-line-icon-pro"></i>
+                    </span>
+                    <span class="d-block g-color-main g-color-white--hover g-font-weight-500 g-font-size-22">Владельцам</span>
+                    <span class="d-block g-color-text g-color-white--hover g-color-white-opacity-0_7--hover g-mb-70">недвижимости</span>
+                    <span class="d-block g-color-main g-color-white--hover g-font-size-13">Узнать больше</span>
+                </a>
+            </li>
+            <!-- End Category - List -->
+        </ul>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    <!-- End Category -->
+    <!-- Rent Products -->
+    <div class="container g-pb-100">
+        <!-- Heading -->
+        <div class="text-center g-mb-50">
+            <span class="u-icon-v1 u-icon-size--xl g-color-primary"><i class="icon-real-estate-016 u-line-icon-pro"></i></span>
+            <h2>Продажа недвижимости</h2>
+        </div>
+        <!-- End Heading -->
+        <div class="row g-mb-40">
+            <div class="col-lg-8 g-mb-30">
+                <!-- Products -->
+                <article>
+                    <!-- Products - Carousel Image -->
+                    <div class="js-carousel"
+                         data-infinite="true"
+                         data-arrows-classes="u-arrow-v1 g-pos-abs g-bottom-0 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_4 g-bg-primary--hover g-color-white"
+                         data-arrow-left-classes="fa fa-angle-left g-right-30 g-brd-right g-brd-white-opacity-0_1"
+                         data-arrow-right-classes="fa fa-angle-right g-right-0">
+                        <div class="js-slide g-pos-rel">
+                            <a class="js-fancybox d-block u-icon-v3 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_6 g-bg-primary--hover g-color-white g-font-size-14 g-pos-abs g-bottom-0 g-right-65" href="javascript:;"
+                               data-fancybox="lightbox-gallery--01"
+                               data-src="~/img-temp/fasad001.jpg"
+                               data-speed="350"
+                               data-caption="Lightbox Gallery">
+                                <i class="icon-size-fullscreen"></i>
+                            </a>
+                            <img class="img-fluid" src="~/img-temp/fasad001.jpg" alt="Image Description">
+                        </div>
+                        <div class="js-slide g-pos-rel">
+                            <a class="js-fancybox d-block u-icon-v3 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_6 g-bg-primary--hover g-color-white g-font-size-14 g-pos-abs g-bottom-0 g-right-65" href="javascript:;"
+                               data-fancybox="lightbox-gallery--01"
+                               data-src="@Url.Content("~/img-temp/flat001.jpg")"
+                               data-speed="350"
+                               data-caption="Lightbox Gallery">
+                                <i class="icon-size-fullscreen"></i>
+                            </a>
+                            <img class="img-fluid" src="~/img-temp/flat001.jpg" alt="Image Description">
+                        </div>
+                        <div class="js-slide g-pos-rel">
+                            <a class="js-fancybox d-block u-icon-v3 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_6 g-bg-primary--hover g-color-white g-font-size-14 g-pos-abs g-bottom-0 g-right-65" href="javascript:;"
+                               data-fancybox="lightbox-gallery--01"
+                               data-src="@Url.Content("~/img-temp/flat002.jpg")"
+                               data-speed="350"
+                               data-caption="Lightbox Gallery">
+                                <i class="icon-size-fullscreen"></i>
+                            </a>
+                            <img class="img-fluid" src="~/img-temp/flat002.jpg" alt="Image Description">
+                        </div>
+                    </div>
+                    <!-- Products - Carousel Image -->
+                    <div class="g-brd-x g-brd-gray-light-v3 g-bg-white">
+                        <!-- Products - List of Details -->
+                        <ul class="d-flex list-inline g-brd-y g-brd-gray-light-v3 mb-0">
+                            <li class="list-inline-item col-4 g-font-weight-500 g-font-size-13 text-center g-px-0 g-py-17 mr-0">
+                                <i class="align-middle g-color-text mr-1 icon-hotel-restaurant-022 u-line-icon-pro"></i>
+                                2 комнаты
+                            </li>
+                            <li class="list-inline-item col-4 g-font-weight-500 g-font-size-13 text-center g-px-0 g-brd-x g-brd-gray-light-v3 g-py-17 mr-0">
+                                <i class="align-middle g-color-text mr-1 icon-real-estate-033 u-line-icon-pro"></i>
+                                2 этаж
+                            </li>
+                            <li class="list-inline-item col-4 g-font-weight-500 g-font-size-13 text-center g-px-0 g-py-17 mr-0">
+                                <i class="align-middle g-color-text mr-1 icon-real-estate-047 u-line-icon-pro"></i>
+                                65 кв.м.
+                            </li>
+                        </ul>
+                        <!-- End Products - List of Details -->
+                        <!-- Products - Address -->
+                        <div class="g-pa-25">
+                            <h3 class="g-font-weight-600 g-font-size-16">Двухкомнатная квартира 65 кв.м., ул. Космонавтов, д. 33</h3>
+                            <p class="g-font-size-13 mb-4">Сургут, пос. Солнечный</p>
+                            <p class="g-color-text g-font-weight-500 g-font-size-13 mb-0">Размещено: <span class="g-color-text g-font-weight-400">12 дней назад</a></p>
+                        </div>
+                        <!-- End Products - Address -->
+                        <!-- Products - List of Details -->
+                        <ul class="d-flex list-inline align-items-center g-brd-top g-brd-gray-light-v3 mb-0">
+                            <li class="list-inline-item col-8 g-font-weight-600 g-font-size-17 text-center g-px-0 g-py-13 mr-0">
+                                
+                                5 000 000 руб.
+                            </li>
+                            <li class="list-inline-item col-2 g-px-0 mr-0">
+                                <a class="d-block g-brd-x g-brd-gray-light-v3 g-color-text g-color-primary--hover g-font-weight-500 g-font-size-17 text-center g-text-underline--none--hover g-py-13" href="javascript:void(0);"
+                                   data-toggle="tooltip"
+                                   data-placement="top"
+                                   title="Добавить к сравнению">
+                                    <i class="icon-finance-149 u-line-icon-pro"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item col-2 g-px-0 mr-0">
+                                <a class="d-block g-color-text g-color-primary--hover g-font-weight-500 g-font-size-17 text-center g-text-underline--none--hover g-py-13" href="javascript:void(0);"
+                                   data-toggle="tooltip"
+                                   data-placement="top"
+                                   title="Отложить">
+                                    <i class="icon-medical-022 u-line-icon-pro"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- End Products - List of Details -->
+                    </div>
+                    <a class="btn btn-block g-brd-top-none g-brd-gray-light-v3 g-brd-primary--hover g-color-white--hover g-bg-secondary g-bg-primary-dark-v1--hover g-font-weight-600 rounded-0 g-px-18 g-py-15" href="page-single-item-1.html">
+                        Больше информации
+                        <i class="align-middle ml-2 fa fa-angle-right"></i>
+                    </a>
+                </article>
+                <!-- End Products -->
+            </div>
+            <div class="col-sm-6 col-lg-4 g-mb-30">
+                <!-- Products -->
+                <article>
+                    <!-- Products - Carousel Image -->
+                    <div class="js-carousel"
+                         data-infinite="true"
+                         data-arrows-classes="u-arrow-v1 g-pos-abs g-bottom-0 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_4 g-bg-primary--hover g-color-white"
+                         data-arrow-left-classes="fa fa-angle-left g-right-30 g-brd-right g-brd-white-opacity-0_1"
+                         data-arrow-right-classes="fa fa-angle-right g-right-0">
+                        <div class="js-slide g-pos-rel">
+                            <a class="js-fancybox d-block u-icon-v3 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_6 g-bg-primary--hover g-color-white g-font-size-14 g-pos-abs g-bottom-0 g-right-65" href="javascript:;"
+                               data-fancybox="lightbox-gallery--02"
+                               data-src="img-temp/600x550/img1.jpg"
+                               data-speed="350"
+                               data-caption="Lightbox Gallery">
+                                <i class="icon-size-fullscreen"></i>
+                            </a>
+                            <img class="img-fluid" src="img-temp/600x550/img1.jpg" alt="Image Description">
+                        </div>
+                        <div class="js-slide g-pos-rel">
+                            <a class="js-fancybox d-block u-icon-v3 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_6 g-bg-primary--hover g-color-white g-font-size-14 g-pos-abs g-bottom-0 g-right-65" href="javascript:;"
+                               data-fancybox="lightbox-gallery--02"
+                               data-src="img-temp/600x550/img2.jpg"
+                               data-speed="350"
+                               data-caption="Lightbox Gallery">
+                                <i class="icon-size-fullscreen"></i>
+                            </a>
+                            <img class="img-fluid" src="img-temp/600x550/img2.jpg" alt="Image Description">
+                        </div>
+                        <div class="js-slide g-pos-rel">
+                            <a class="js-fancybox d-block u-icon-v3 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_6 g-bg-primary--hover g-color-white g-font-size-14 g-pos-abs g-bottom-0 g-right-65" href="javascript:;"
+                               data-fancybox="lightbox-gallery--02"
+                               data-src="img-temp/600x550/img3.jpg"
+                               data-speed="350"
+                               data-caption="Lightbox Gallery">
+                                <i class="icon-size-fullscreen"></i>
+                            </a>
+                            <img class="img-fluid" src="img-temp/600x550/img3.jpg" alt="Image Description">
+                        </div>
+                        <div class="js-slide g-pos-rel">
+                            <a class="js-fancybox d-block u-icon-v3 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_6 g-bg-primary--hover g-color-white g-font-size-14 g-pos-abs g-bottom-0 g-right-65" href="javascript:;"
+                               data-fancybox="lightbox-gallery--02"
+                               data-src="img-temp/600x550/img4.jpg"
+                               data-speed="350"
+                               data-caption="Lightbox Gallery">
+                                <i class="icon-size-fullscreen"></i>
+                            </a>
+                            <img class="img-fluid" src="img-temp/600x550/img4.jpg" alt="Image Description">
+                        </div>
+                    </div>
+                    <!-- Products - Carousel Image -->
+                    <div class="g-brd-x g-brd-gray-light-v3 g-bg-white">
+                        <!-- Products - List of Details -->
+                        <ul class="d-flex list-inline g-brd-y g-brd-gray-light-v3 mb-0">
+                            <li class="list-inline-item col-4 g-font-weight-500 g-font-size-13 text-center g-px-0 g-py-17 mr-0">
+                                <i class="align-middle g-color-text mr-1 icon-hotel-restaurant-022 u-line-icon-pro"></i>
+                                2 комнаты
+                            </li>
+                            <li class="list-inline-item col-4 g-font-weight-500 g-font-size-13 text-center g-px-0 g-brd-x g-brd-gray-light-v3 g-py-17 mr-0">
+                                <i class="align-middle g-color-text mr-1 icon-real-estate-033 u-line-icon-pro"></i>
+                                3 этаж
+                            </li>
+                            <li class="list-inline-item col-4 g-font-weight-500 g-font-size-13 text-center g-px-0 g-py-17 mr-0">
+                                <i class="align-middle g-color-text mr-1 icon-real-estate-047 u-line-icon-pro"></i>
+                                65 кв. м.
+                            </li>
+                        </ul>
+                        <!-- End Products - List of Details -->
+                        <!-- Products - Address -->
+                        <div class="g-pa-25">
+                            <h3 class="g-font-weight-600 g-font-size-16">Двухкомнатная квартира 65 кв.м., ул. Космонавтов, д. 33</h3>
+                            <p class="g-font-size-13 mb-4">Сургут, пос. Солнечный</p>
+                            
+                            <p class="g-color-text g-font-weight-500 g-font-size-13 mb-0">Размещено: <span class="g-color-text g-font-weight-400">12 дней назад</a></p>
+                        </div>
+                        <!-- End Products - Address -->
+                        <!-- Products - List of Details -->
+                        <ul class="d-flex list-inline align-items-center g-brd-top g-brd-gray-light-v3 mb-0">
+                            <li class="list-inline-item col-8 g-font-weight-600 g-font-size-17 text-center g-px-0 g-py-13 mr-0">
+                                5 000 000 руб.
+                            </li>
+                            <li class="list-inline-item col-2 g-px-0 mr-0">
+                                <a class="d-block g-brd-x g-brd-gray-light-v3 g-color-text g-color-primary--hover g-font-weight-500 g-font-size-17 text-center g-text-underline--none--hover g-py-13" href="javascript:void(0);"
+                                   data-toggle="tooltip"
+                                   data-placement="top"
+                                   title="Добавить к сравнению">
+                                    <i class="icon-finance-149 u-line-icon-pro"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item col-2 g-px-0 mr-0">
+                                <a class="d-block g-color-text g-color-primary--hover g-font-weight-500 g-font-size-17 text-center g-text-underline--none--hover g-py-13" href="javascript:void(0);"
+                                   data-toggle="tooltip"
+                                   data-placement="top"
+                                   title="Отложить">
+                                    <i class="icon-medical-022 u-line-icon-pro"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- End Products - List of Details -->
+                    </div>
+                    <a class="btn btn-block g-brd-top-none g-brd-gray-light-v3 g-brd-primary--hover g-color-white--hover g-bg-secondary g-bg-primary-dark-v1--hover g-font-weight-600 rounded-0 g-px-18 g-py-15" href="page-single-item-1.html">
+                        Больше информации
+                        <i class="align-middle ml-2 fa fa-angle-right"></i>
+                    </a>
+                </article>
+                <!-- End Products -->
+            </div>
+            <div class="col-sm-6 col-lg-4 g-mb-30">
+                <!-- Products -->
+                <article>
+                    <!-- Products - Carousel Image -->
+                    <div class="js-carousel"
+                         data-infinite="true"
+                         data-arrows-classes="u-arrow-v1 g-pos-abs g-bottom-0 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_4 g-bg-primary--hover g-color-white"
+                         data-arrow-left-classes="fa fa-angle-left g-right-30 g-brd-right g-brd-white-opacity-0_1"
+                         data-arrow-right-classes="fa fa-angle-right g-right-0">
+                        <div class="js-slide g-pos-rel">
+                            <a class="js-fancybox d-block u-icon-v3 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_6 g-bg-primary--hover g-color-white g-font-size-14 g-pos-abs g-bottom-0 g-right-65" href="javascript:;"
+                               data-fancybox="lightbox-gallery--03"
+                               data-src="img-temp/600x450/img4.jpg"
+                               data-speed="350"
+                               data-caption="Lightbox Gallery">
+                                <i class="icon-size-fullscreen"></i>
+                            </a>
+                            <img class="img-fluid" src="img-temp/600x450/img4.jpg" alt="Image Description">
+                        </div>
+                        <div class="js-slide g-pos-rel">
+                            <a class="js-fancybox d-block u-icon-v3 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_6 g-bg-primary--hover g-color-white g-font-size-14 g-pos-abs g-bottom-0 g-right-65" href="javascript:;"
+                               data-fancybox="lightbox-gallery--03"
+                               data-src="img-temp/600x450/img8.jpg"
+                               data-speed="350"
+                               data-caption="Lightbox Gallery">
+                                <i class="icon-size-fullscreen"></i>
+                            </a>
+                            <img class="img-fluid" src="img-temp/600x450/img8.jpg" alt="Image Description">
+                        </div>
+                        <div class="js-slide g-pos-rel">
+                            <a class="js-fancybox d-block u-icon-v3 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_6 g-bg-primary--hover g-color-white g-font-size-14 g-pos-abs g-bottom-0 g-right-65" href="javascript:;"
+                               data-fancybox="lightbox-gallery--03"
+                               data-src="img-temp/600x450/img9.jpg"
+                               data-speed="350"
+                               data-caption="Lightbox Gallery">
+                                <i class="icon-size-fullscreen"></i>
+                            </a>
+                            <img class="img-fluid" src="img-temp/600x450/img9.jpg" alt="Image Description">
+                        </div>
+                    </div>
+                    <!-- Products - Carousel Image -->
+                    <div class="g-brd-x g-brd-gray-light-v3 g-bg-white">
+                        <!-- Products - List of Details -->
+                        <ul class="d-flex list-inline g-brd-y g-brd-gray-light-v3 mb-0">
+                            <li class="list-inline-item col-4 g-font-weight-500 g-font-size-13 text-center g-px-0 g-py-17 mr-0">
+                                <i class="align-middle g-color-text mr-1 icon-hotel-restaurant-022 u-line-icon-pro"></i>
+                                2 комнаты
+                            </li>
+                            <li class="list-inline-item col-4 g-font-weight-500 g-font-size-13 text-center g-px-0 g-brd-x g-brd-gray-light-v3 g-py-17 mr-0">
+                                <i class="align-middle g-color-text mr-1 icon-real-estate-033 u-line-icon-pro"></i>
+                                4 этаж
+                            </li>
+                            <li class="list-inline-item col-4 g-font-weight-500 g-font-size-13 text-center g-px-0 g-py-17 mr-0">
+                                <i class="align-middle g-color-text mr-1 icon-real-estate-047 u-line-icon-pro"></i>
+                                70 кв. м.
+                            </li>
+                        </ul>
+                        <!-- End Products - List of Details -->
+                        <!-- Products - Address -->
+                        <div class="g-pa-25">
+                            <h3 class="g-font-weight-600 g-font-size-16">Двухкомнатная квартира 65 кв.м., ул. Космонавтов, д. 33</h3>
+                            <p class="g-font-size-13 mb-4">Сургут, пос. Солнечный</p>
+                            
+                            <p class="g-color-text g-font-weight-500 g-font-size-13 mb-0">Размещено: <span class="g-color-text g-font-weight-400">12 дней назад</a></p>
+                        </div>
+                        <!-- End Products - Address -->
+                        <!-- Products - List of Details -->
+                        <ul class="d-flex list-inline align-items-center g-brd-top g-brd-gray-light-v3 mb-0">
+                            <li class="list-inline-item col-8 g-font-weight-600 g-font-size-17 text-center g-px-0 g-py-13 mr-0">
+                                6 000 000 руб.
+                            </li>
+                            <li class="list-inline-item col-2 g-px-0 mr-0">
+                                <a class="d-block g-brd-x g-brd-gray-light-v3 g-color-text g-color-primary--hover g-font-weight-500 g-font-size-17 text-center g-text-underline--none--hover g-py-13" href="javascript:void(0);"
+                                   data-toggle="tooltip"
+                                   data-placement="top"
+                                   title="Добавить к сравнению">
+                                    <i class="icon-finance-149 u-line-icon-pro"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item col-2 g-px-0 mr-0">
+                                <a class="d-block g-color-text g-color-primary--hover g-font-weight-500 g-font-size-17 text-center g-text-underline--none--hover g-py-13" href="javascript:void(0);"
+                                   data-toggle="tooltip"
+                                   data-placement="top"
+                                   title="Отложить">
+                                    <i class="icon-medical-022 u-line-icon-pro"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- End Products - List of Details -->
+                    </div>
+                    <a class="btn btn-block g-brd-top-none g-brd-gray-light-v3 g-brd-primary--hover g-color-white--hover g-bg-secondary g-bg-primary-dark-v1--hover g-font-weight-600 rounded-0 g-px-18 g-py-15" href="page-single-item-1.html">
+                        Больше информации
+                        <i class="align-middle ml-2 fa fa-angle-right"></i>
+                    </a>
+                </article>
+                <!-- End Products -->
+            </div>
+            <div class="col-sm-6 col-lg-4 g-mb-30">
+                <!-- Products -->
+                <article>
+                    <!-- Products - Carousel Image -->
+                    <div class="js-carousel"
+                         data-infinite="true"
+                         data-arrows-classes="u-arrow-v1 g-pos-abs g-bottom-0 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_4 g-bg-primary--hover g-color-white"
+                         data-arrow-left-classes="fa fa-angle-left g-right-30 g-brd-right g-brd-white-opacity-0_1"
+                         data-arrow-right-classes="fa fa-angle-right g-right-0">
+                        <div class="js-slide g-pos-rel">
+                            <a class="js-fancybox d-block u-icon-v3 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_6 g-bg-primary--hover g-color-white g-font-size-14 g-pos-abs g-bottom-0 g-right-65" href="javascript:;"
+                               data-fancybox="lightbox-gallery--04"
+                               data-src="img-temp/600x450/img5.jpg"
+                               data-speed="350"
+                               data-caption="Lightbox Gallery">
+                                <i class="icon-size-fullscreen"></i>
+                            </a>
+                            <img class="img-fluid" src="img-temp/600x450/img5.jpg" alt="Image Description">
+                        </div>
+                        <div class="js-slide g-pos-rel">
+                            <a class="js-fancybox d-block u-icon-v3 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_6 g-bg-primary--hover g-color-white g-font-size-14 g-pos-abs g-bottom-0 g-right-65" href="javascript:;"
+                               data-fancybox="lightbox-gallery--04"
+                               data-src="img-temp/600x450/img6.jpg"
+                               data-speed="350"
+                               data-caption="Lightbox Gallery">
+                                <i class="icon-size-fullscreen"></i>
+                            </a>
+                            <img class="img-fluid" src="img-temp/600x450/img6.jpg" alt="Image Description">
+                        </div>
+                        <div class="js-slide g-pos-rel">
+                            <a class="js-fancybox d-block u-icon-v3 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_6 g-bg-primary--hover g-color-white g-font-size-14 g-pos-abs g-bottom-0 g-right-65" href="javascript:;"
+                               data-fancybox="lightbox-gallery--04"
+                               data-src="img-temp/600x450/img7.jpg"
+                               data-speed="350"
+                               data-caption="Lightbox Gallery">
+                                <i class="icon-size-fullscreen"></i>
+                            </a>
+                            <img class="img-fluid" src="img-temp/600x450/img7.jpg" alt="Image Description">
+                        </div>
+                    </div>
+                    <!-- Products - Carousel Image -->
+                    <div class="g-brd-x g-brd-gray-light-v3 g-bg-white">
+                        <!-- Products - List of Details -->
+                        <ul class="d-flex list-inline g-brd-y g-brd-gray-light-v3 mb-0">
+                            <li class="list-inline-item col-4 g-font-weight-500 g-font-size-13 text-center g-px-0 g-py-17 mr-0">
+                                <i class="align-middle g-color-text mr-1 icon-hotel-restaurant-022 u-line-icon-pro"></i>
+                                2 комнаты
+                            </li>
+                            <li class="list-inline-item col-4 g-font-weight-500 g-font-size-13 text-center g-px-0 g-brd-x g-brd-gray-light-v3 g-py-17 mr-0">
+                                <i class="align-middle g-color-text mr-1 icon-real-estate-033 u-line-icon-pro"></i>
+                                2 этаж
+                            </li>
+                            <li class="list-inline-item col-4 g-font-weight-500 g-font-size-13 text-center g-px-0 g-py-17 mr-0">
+                                <i class="align-middle g-color-text mr-1 icon-real-estate-047 u-line-icon-pro"></i>
+                                55 кв. м.
+                            </li>
+                        </ul>
+                        <!-- End Products - List of Details -->
+                        <!-- Products - Address -->
+                        <div class="g-pa-25">
+                            <h3 class="g-font-weight-600 g-font-size-16">Двухкомнатная квартира 65 кв.м., ул. Космонавтов, д. 33</h3>
+                            <p class="g-font-size-13 mb-4">Сургут, пос. Солнечный</p>
+                            
+                            <p class="g-color-text g-font-weight-500 g-font-size-13 mb-0">Размещено: <span class="g-color-text g-font-weight-400">12 дней назад</a></p>
+                        </div>
+                        <!-- End Products - Address -->
+                        <!-- Products - List of Details -->
+                        <ul class="d-flex list-inline align-items-center g-brd-top g-brd-gray-light-v3 mb-0">
+                            <li class="list-inline-item col-8 g-font-weight-600 g-font-size-17 text-center g-px-0 g-py-13 mr-0">
+                                6 000 000 руб.
+                            </li>
+                            <li class="list-inline-item col-2 g-px-0 mr-0">
+                                <a class="d-block g-brd-x g-brd-gray-light-v3 g-color-text g-color-primary--hover g-font-weight-500 g-font-size-17 text-center g-text-underline--none--hover g-py-13" href="javascript:void(0);"
+                                   data-toggle="tooltip"
+                                   data-placement="top"
+                                   title="Добавить к сравнению">
+                                    <i class="icon-finance-149 u-line-icon-pro"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item col-2 g-px-0 mr-0">
+                                <a class="d-block g-color-text g-color-primary--hover g-font-weight-500 g-font-size-17 text-center g-text-underline--none--hover g-py-13" href="javascript:void(0);"
+                                   data-toggle="tooltip"
+                                   data-placement="top"
+                                   title="Отложить">
+                                    <i class="icon-medical-022 u-line-icon-pro"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- End Products - List of Details -->
+                    </div>
+                    <a class="btn btn-block g-brd-top-none g-brd-gray-light-v3 g-brd-primary--hover g-color-white--hover g-bg-secondary g-bg-primary-dark-v1--hover g-font-weight-600 rounded-0 g-px-18 g-py-15" href="page-single-item-1.html">
+                        Больше информации
+                        <i class="align-middle ml-2 fa fa-angle-right"></i>
+                    </a>
+                </article>
+                <!-- End Products -->
+            </div>
+            <div class="col-sm-6 col-lg-4 g-mb-30">
+                <!-- Products -->
+                <article>
+                    <!-- Products - Carousel Image -->
+                    <div class="js-carousel"
+                         data-infinite="true"
+                         data-arrows-classes="u-arrow-v1 g-pos-abs g-bottom-0 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_4 g-bg-primary--hover g-color-white"
+                         data-arrow-left-classes="fa fa-angle-left g-right-30 g-brd-right g-brd-white-opacity-0_1"
+                         data-arrow-right-classes="fa fa-angle-right g-right-0">
+                        <div class="js-slide g-pos-rel">
+                            <a class="js-fancybox d-block u-icon-v3 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_6 g-bg-primary--hover g-color-white g-font-size-14 g-pos-abs g-bottom-0 g-right-65" href="javascript:;"
+                               data-fancybox="lightbox-gallery--05"
+                               data-src="img-temp/600x450/img11.jpg"
+                               data-speed="350"
+                               data-caption="Lightbox Gallery">
+                                <i class="icon-size-fullscreen"></i>
+                            </a>
+                            <img class="img-fluid" src="img-temp/600x450/img11.jpg" alt="Image Description">
+                        </div>
+                        <div class="js-slide g-pos-rel">
+                            <a class="js-fancybox d-block u-icon-v3 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_6 g-bg-primary--hover g-color-white g-font-size-14 g-pos-abs g-bottom-0 g-right-65" href="javascript:;"
+                               data-fancybox="lightbox-gallery--05"
+                               data-src="img-temp/600x450/img10.jpg"
+                               data-speed="350"
+                               data-caption="Lightbox Gallery">
+                                <i class="icon-size-fullscreen"></i>
+                            </a>
+                            <img class="img-fluid" src="img-temp/600x450/img10.jpg" alt="Image Description">
+                        </div>
+                        <div class="js-slide g-pos-rel">
+                            <a class="js-fancybox d-block u-icon-v3 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_6 g-bg-primary--hover g-color-white g-font-size-14 g-pos-abs g-bottom-0 g-right-65" href="javascript:;"
+                               data-fancybox="lightbox-gallery--05"
+                               data-src="img-temp/600x450/img12.jpg"
+                               data-speed="350"
+                               data-caption="Lightbox Gallery">
+                                <i class="icon-size-fullscreen"></i>
+                            </a>
+                            <img class="img-fluid" src="img-temp/600x450/img12.jpg" alt="Image Description">
+                        </div>
+                    </div>
+                    <!-- Products - Carousel Image -->
+                    <div class="g-brd-x g-brd-gray-light-v3 g-bg-white">
+                        <!-- Products - List of Details -->
+                        <ul class="d-flex list-inline g-brd-y g-brd-gray-light-v3 mb-0">
+                            <li class="list-inline-item col-4 g-font-weight-500 g-font-size-13 text-center g-px-0 g-py-17 mr-0">
+                                <i class="align-middle g-color-text mr-1 icon-hotel-restaurant-022 u-line-icon-pro"></i>
+                                2 комнаты
+                            </li>
+                            <li class="list-inline-item col-4 g-font-weight-500 g-font-size-13 text-center g-px-0 g-brd-x g-brd-gray-light-v3 g-py-17 mr-0">
+                                <i class="align-middle g-color-text mr-1 icon-real-estate-033 u-line-icon-pro"></i>
+                                1 этаж
+                            </li>
+                            <li class="list-inline-item col-4 g-font-weight-500 g-font-size-13 text-center g-px-0 g-py-17 mr-0">
+                                <i class="align-middle g-color-text mr-1 icon-real-estate-047 u-line-icon-pro"></i>
+                                60 кв. м.
+                            </li>
+                        </ul>
+                        <!-- End Products - List of Details -->
+                        <!-- Products - Address -->
+                        <div class="g-pa-25">
+                            <h3 class="g-font-weight-600 g-font-size-16">Двухкомнатная квартира 65 кв.м., ул. Космонавтов, д. 33</h3>
+                            <p class="g-font-size-13 mb-4">Сургут, пос. Солнечный</p>
+                            
+                            <p class="g-color-text g-font-weight-500 g-font-size-13 mb-0">Размещено: <span class="g-color-text g-font-weight-400">12 дней назад</a></p>
+                        </div>
+                        <!-- End Products - Address -->
+                        <!-- Products - List of Details -->
+                        <ul class="d-flex list-inline align-items-center g-brd-top g-brd-gray-light-v3 mb-0">
+                            <li class="list-inline-item col-8 g-font-weight-600 g-font-size-17 text-center g-px-0 g-py-13 mr-0">
+                                5 000 000 руб.
+                            </li>
+                            <li class="list-inline-item col-2 g-px-0 mr-0">
+                                <a class="d-block g-brd-x g-brd-gray-light-v3 g-color-text g-color-primary--hover g-font-weight-500 g-font-size-17 text-center g-text-underline--none--hover g-py-13" href="javascript:void(0);"
+                                   data-toggle="tooltip"
+                                   data-placement="top"
+                                   title="Добавить к сравнению">
+                                    <i class="icon-finance-149 u-line-icon-pro"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item col-2 g-px-0 mr-0">
+                                <a class="d-block g-color-text g-color-primary--hover g-font-weight-500 g-font-size-17 text-center g-text-underline--none--hover g-py-13" href="javascript:void(0);"
+                                   data-toggle="tooltip"
+                                   data-placement="top"
+                                   title="Отложить">
+                                    <i class="icon-medical-022 u-line-icon-pro"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- End Products - List of Details -->
+                    </div>
+                    <a class="btn btn-block g-brd-top-none g-brd-gray-light-v3 g-brd-primary--hover g-color-white--hover g-bg-secondary g-bg-primary-dark-v1--hover g-font-weight-600 rounded-0 g-px-18 g-py-15" href="page-single-item-1.html">
+                        Больше информации
+                        <i class="align-middle ml-2 fa fa-angle-right"></i>
+                    </a>
+                </article>
+                <!-- End Products -->
+            </div>
+        </div>
+        <div class="text-center">
+            <a class="btn g-color-text g-color-primary--hover g-bg-transparent g-font-weight-600 text-uppercase rounded-0" href="page-listing-1.html">
+                <span class="align-middle g-color-primary g-font-size-20 g-pos-rel g-top-minus-2 mr-2">&#43;</span>
+                Посмотреть все предложения
+            </a>
+        </div>
     </div>
-</div>
+    <!-- End Rent Products -->
+    <!-- About Us -->
+    <div class="g-bg-cover g-bg-pos-top-center g-bg-img-hero g-pt-100 g-pb-70" style="background-image: url(img/bg/map-sketch.jpg);">
+        <div class="g-pos-rel g-z-index-1">
+            <!-- Heading -->
+            <div class="g-max-width-750 text-center mx-auto g-mb-100">
+                <h2 class="mb-4">Наша цель - Ваши спокойствие и уверенность при выборе недвижимости</h2>
+                <p class="g-font-size-16 g-line-height-2">Сургут Эстейт предлагает комфортные условия проживания с семьей. Реализуемая недвижимость отвечает всем потребностям своих жителей, предлагая в шаговой доступности все удобства, такие как школы, детские сады, торговые центры, больницы. Все это направлено на реализацию нашего проекта по созданию удобной гавани, в которой ваши растущие семьи смогут спокойно жить, развиваться, трудится и играть.</p>
+            </div>
+            <!-- End Heading -->
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-3 g-mb-30">
+                        <!-- Product - Services -->
+                        <div class="text-center">
+                            <span class="u-icon-v3 u-icon-size--xl g-color-white g-bg-primary rounded-circle mb-4">
+                                <i class="icon-real-estate-001 u-line-icon-pro"></i>
+                            </span>
+                            <h3 class="h5 text-uppercase">Мы найдем лучший </h3>
+                            <p>вариант, в соответствии с Вашими предпочтениями</p>
+                        </div>
+                        <!-- End Product - Services -->
+                    </div>
+                    <div class="col-md-3 g-mb-30">
+                        <!-- Product - Services -->
+                        <div class="text-center">
+                            <span class="u-icon-v3 u-icon-size--xl g-color-white g-bg-primary rounded-circle mb-4">
+                                <i class="icon-real-estate-013 u-line-icon-pro"></i>
+                            </span>
+                            <h3 class="h5 text-uppercase">Мы решим</h3>
+                            <p>все юридические вопросы, возникающие при заключении сделки.</p>
+                        </div>
+                        <!-- End Product - Services -->
+                    </div>
+                    <div class="col-md-3 g-mb-30">
+                        <!-- Product - Services -->
+                        <div class="text-center">
+                            <span class="u-icon-v3 u-icon-size--xl g-color-white g-bg-primary rounded-circle mb-4">
+                                <i class="icon-christmas-037 u-line-icon-pro"></i>
+                            </span>
+                            <h3 class="h5 text-uppercase">Бонусы</h3>
+                            <p>и приятные подарки каждому клиенту.</p>
+                        </div>
+                        <!-- End Product - Services -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End About Us -->
+    <!-- Rent Products -->
+    <div class="container g-py-100">
+        <!-- Heading -->
+        <div class="text-center g-mb-50">
+            <span class="u-icon-v1 u-icon-size--xl g-color-primary"><i class="icon-real-estate-015 u-line-icon-pro"></i></span>
+            <h2>Аренда недвижимости</h2>
+        </div>
+        <!-- End Heading -->
+        <div class="row g-mb-40">
+            <div class="col-sm-6 col-lg-4 g-mb-30">
+                <!-- Products -->
+                <article>
+                    <!-- Products - Carousel Image -->
+                    <div class="js-carousel"
+                         data-infinite="true"
+                         data-arrows-classes="u-arrow-v1 g-pos-abs g-bottom-0 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_4 g-bg-primary--hover g-color-white"
+                         data-arrow-left-classes="fa fa-angle-left g-right-30 g-brd-right g-brd-white-opacity-0_1"
+                         data-arrow-right-classes="fa fa-angle-right g-right-0">
+                        <div class="js-slide g-pos-rel">
+                            <a class="js-fancybox d-block u-icon-v3 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_6 g-bg-primary--hover g-color-white g-font-size-14 g-pos-abs g-bottom-0 g-right-65" href="javascript:;"
+                               data-fancybox="lightbox-gallery--06"
+                               data-src="img-temp/600x450/img1.jpg"
+                               data-speed="350"
+                               data-caption="Lightbox Gallery">
+                                <i class="icon-size-fullscreen"></i>
+                            </a>
+                            <img class="img-fluid" src="img-temp/600x450/img1.jpg" alt="Image Description">
+                        </div>
+                        <div class="js-slide g-pos-rel">
+                            <a class="js-fancybox d-block u-icon-v3 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_6 g-bg-primary--hover g-color-white g-font-size-14 g-pos-abs g-bottom-0 g-right-65" href="javascript:;"
+                               data-fancybox="lightbox-gallery--06"
+                               data-src="img-temp/600x450/img2.jpg"
+                               data-speed="350"
+                               data-caption="Lightbox Gallery">
+                                <i class="icon-size-fullscreen"></i>
+                            </a>
+                            <img class="img-fluid" src="img-temp/600x450/img2.jpg" alt="Image Description">
+                        </div>
+                        <div class="js-slide g-pos-rel">
+                            <a class="js-fancybox d-block u-icon-v3 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_6 g-bg-primary--hover g-color-white g-font-size-14 g-pos-abs g-bottom-0 g-right-65" href="javascript:;"
+                               data-fancybox="lightbox-gallery--06"
+                               data-src="img-temp/600x450/img3.jpg"
+                               data-speed="350"
+                               data-caption="Lightbox Gallery">
+                                <i class="icon-size-fullscreen"></i>
+                            </a>
+                            <img class="img-fluid" src="img-temp/600x450/img3.jpg" alt="Image Description">
+                        </div>
+                    </div>
+                    <!-- Products - Carousel Image -->
+                    <div class="g-brd-x g-brd-gray-light-v3 g-bg-white">
+                        <!-- Products - List of Details -->
+                        <ul class="d-flex list-inline g-brd-y g-brd-gray-light-v3 mb-0">
+                            <li class="list-inline-item col-4 g-font-weight-500 g-font-size-13 text-center g-px-0 g-py-17 mr-0">
+                                <i class="align-middle g-color-text mr-1 icon-hotel-restaurant-022 u-line-icon-pro"></i>
+                                3 комнаты
+                            </li>
+                            <li class="list-inline-item col-4 g-font-weight-500 g-font-size-13 text-center g-px-0 g-brd-x g-brd-gray-light-v3 g-py-17 mr-0">
+                                <i class="align-middle g-color-text mr-1 icon-real-estate-033 u-line-icon-pro"></i>
+                                4 этаж
+                            </li>
+                            <li class="list-inline-item col-4 g-font-weight-500 g-font-size-13 text-center g-px-0 g-py-17 mr-0">
+                                <i class="align-middle g-color-text mr-1 icon-real-estate-047 u-line-icon-pro"></i>
+                                75 кв. м.
+                            </li>
+                        </ul>
+                        <!-- End Products - List of Details -->
+                        <!-- Products - Address -->
+                        <div class="g-pa-25">
+                            <h3 class="g-font-weight-600 g-font-size-16">Трехкомнатная квартира 65 кв.м., ул. Космонавтов, д. 33</h3>
+                            <p class="g-font-size-13 mb-4">Сургут, пос. Солнечный</p>
+                            
+                            <p class="g-color-text g-font-weight-500 g-font-size-13 mb-0">Размещено: <span class="g-color-text g-font-weight-400">12 дней назад</a></p>
+                        </div>
+                        <!-- End Products - Address -->
+                        <!-- Products - List of Details -->
+                        <ul class="d-flex list-inline align-items-center g-brd-top g-brd-gray-light-v3 mb-0">
+                            <li class="list-inline-item col-8 g-font-weight-600 g-font-size-17 text-center g-px-0 g-py-13 mr-0">
+                                15 000 руб.<span class="g-font-size-13">/мес</span>
+                            </li>
+                            <li class="list-inline-item col-2 g-px-0 mr-0">
+                                <a class="d-block g-brd-x g-brd-gray-light-v3 g-color-text g-color-primary--hover g-font-weight-500 g-font-size-17 text-center g-text-underline--none--hover g-py-13" href="javascript:void(0);"
+                                   data-toggle="tooltip"
+                                   data-placement="top"
+                                   title="Добавить к сравнению">
+                                    <i class="icon-finance-149 u-line-icon-pro"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item col-2 g-px-0 mr-0">
+                                <a class="d-block g-color-text g-color-primary--hover g-font-weight-500 g-font-size-17 text-center g-text-underline--none--hover g-py-13" href="javascript:void(0);"
+                                   data-toggle="tooltip"
+                                   data-placement="top"
+                                   title="Отложить">
+                                    <i class="icon-medical-022 u-line-icon-pro"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- End Products - List of Details -->
+                    </div>
+                    <a class="btn btn-block g-brd-top-none g-brd-gray-light-v3 g-brd-primary--hover g-color-white--hover g-bg-secondary g-bg-primary-dark-v1--hover g-font-weight-600 rounded-0 g-px-18 g-py-15" href="page-single-item-1.html">
+                        Больше информации
+                        <i class="align-middle ml-2 fa fa-angle-right"></i>
+                    </a>
+                </article>
+                <!-- End Products -->
+            </div>
+            <div class="col-sm-6 col-lg-4 g-mb-30">
+                <!-- Products -->
+                <article>
+                    <!-- Products - Carousel Image -->
+                    <div class="js-carousel"
+                         data-infinite="true"
+                         data-arrows-classes="u-arrow-v1 g-pos-abs g-bottom-0 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_4 g-bg-primary--hover g-color-white"
+                         data-arrow-left-classes="fa fa-angle-left g-right-30 g-brd-right g-brd-white-opacity-0_1"
+                         data-arrow-right-classes="fa fa-angle-right g-right-0">
+                        <div class="js-slide g-pos-rel">
+                            <a class="js-fancybox d-block u-icon-v3 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_6 g-bg-primary--hover g-color-white g-font-size-14 g-pos-abs g-bottom-0 g-right-65" href="javascript:;"
+                               data-fancybox="lightbox-gallery--07"
+                               data-src="img-temp/600x450/img15.jpg"
+                               data-speed="350"
+                               data-caption="Lightbox Gallery">
+                                <i class="icon-size-fullscreen"></i>
+                            </a>
+                            <img class="img-fluid" src="img-temp/600x450/img15.jpg" alt="Image Description">
+                        </div>
+                        <div class="js-slide g-pos-rel">
+                            <a class="js-fancybox d-block u-icon-v3 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_6 g-bg-primary--hover g-color-white g-font-size-14 g-pos-abs g-bottom-0 g-right-65" href="javascript:;"
+                               data-fancybox="lightbox-gallery--07"
+                               data-src="img-temp/600x450/img16.jpg"
+                               data-speed="350"
+                               data-caption="Lightbox Gallery">
+                                <i class="icon-size-fullscreen"></i>
+                            </a>
+                            <img class="img-fluid" src="img-temp/600x450/img16.jpg" alt="Image Description">
+                        </div>
+                        <div class="js-slide g-pos-rel">
+                            <a class="js-fancybox d-block u-icon-v3 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_6 g-bg-primary--hover g-color-white g-font-size-14 g-pos-abs g-bottom-0 g-right-65" href="javascript:;"
+                               data-fancybox="lightbox-gallery--07"
+                               data-src="img-temp/600x450/img17.jpg"
+                               data-speed="350"
+                               data-caption="Lightbox Gallery">
+                                <i class="icon-size-fullscreen"></i>
+                            </a>
+                            <img class="img-fluid" src="img-temp/600x450/img17.jpg" alt="Image Description">
+                        </div>
+                    </div>
+                    <!-- Products - Carousel Image -->
+                    <div class="g-brd-x g-brd-gray-light-v3 g-bg-white">
+                        <!-- Products - List of Details -->
+                        <ul class="d-flex list-inline g-brd-y g-brd-gray-light-v3 mb-0">
+                            <li class="list-inline-item col-4 g-font-weight-500 g-font-size-13 text-center g-px-0 g-py-17 mr-0">
+                                <i class="align-middle g-color-text mr-1 icon-hotel-restaurant-022 u-line-icon-pro"></i>
+                                4 комнаты
+                            </li>
+                            <li class="list-inline-item col-4 g-font-weight-500 g-font-size-13 text-center g-px-0 g-brd-x g-brd-gray-light-v3 g-py-17 mr-0">
+                                <i class="align-middle g-color-text mr-1 icon-real-estate-033 u-line-icon-pro"></i>
+                                3 этаж
+                            </li>
+                            <li class="list-inline-item col-4 g-font-weight-500 g-font-size-13 text-center g-px-0 g-py-17 mr-0">
+                                <i class="align-middle g-color-text mr-1 icon-real-estate-047 u-line-icon-pro"></i>
+                                82 кв. м.
+                            </li>
+                        </ul>
+                        <!-- End Products - List of Details -->
+                        <!-- Products - Address -->
+                        <div class="g-pa-25">
+                            <h3 class="g-font-weight-600 g-font-size-16">Четырехкомнатная квартира 65 кв.м., ул. Космонавтов, д. 33</h3>
+                            <p class="g-font-size-13 mb-4">Сургут, пос. Солнечный</p>
+                            
+                            <p class="g-color-text g-font-weight-500 g-font-size-13 mb-0">Размещено: <span class="g-color-text g-font-weight-400">12 дней назад</a></p>
+                        </div>
+                        <!-- End Products - Address -->
+                        <!-- Products - List of Details -->
+                        <ul class="d-flex list-inline align-items-center g-brd-top g-brd-gray-light-v3 mb-0">
+                            <li class="list-inline-item col-8 g-font-weight-600 g-font-size-17 text-center g-px-0 g-py-13 mr-0">
+                                25 000 руб.<span class="g-font-size-13">/мес</span>
+                            </li>
+                            <li class="list-inline-item col-2 g-px-0 mr-0">
+                                <a class="d-block g-brd-x g-brd-gray-light-v3 g-color-text g-color-primary--hover g-font-weight-500 g-font-size-17 text-center g-text-underline--none--hover g-py-13" href="javascript:void(0);"
+                                   data-toggle="tooltip"
+                                   data-placement="top"
+                                   title="Добавить к сравнению">
+                                    <i class="icon-finance-149 u-line-icon-pro"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item col-2 g-px-0 mr-0">
+                                <a class="d-block g-color-text g-color-primary--hover g-font-weight-500 g-font-size-17 text-center g-text-underline--none--hover g-py-13" href="javascript:void(0);"
+                                   data-toggle="tooltip"
+                                   data-placement="top"
+                                   title="Отложить">
+                                    <i class="icon-medical-022 u-line-icon-pro"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- End Products - List of Details -->
+                    </div>
+                    <a class="btn btn-block g-brd-top-none g-brd-gray-light-v3 g-brd-primary--hover g-color-white--hover g-bg-secondary g-bg-primary-dark-v1--hover g-font-weight-600 rounded-0 g-px-18 g-py-15" href="page-single-item-1.html">
+                        Больше информации
+                        <i class="align-middle ml-2 fa fa-angle-right"></i>
+                    </a>
+                </article>
+                <!-- End Products -->
+            </div>
+            <div class="col-sm-6 col-lg-4 g-mb-30">
+                <!-- Products -->
+                <article>
+                    <!-- Products - Carousel Image -->
+                    <div class="js-carousel"
+                         data-infinite="true"
+                         data-arrows-classes="u-arrow-v1 g-pos-abs g-bottom-0 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_4 g-bg-primary--hover g-color-white"
+                         data-arrow-left-classes="fa fa-angle-left g-right-30 g-brd-right g-brd-white-opacity-0_1"
+                         data-arrow-right-classes="fa fa-angle-right g-right-0">
+                        <div class="js-slide g-pos-rel">
+                            <a class="js-fancybox d-block u-icon-v3 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_6 g-bg-primary--hover g-color-white g-font-size-14 g-pos-abs g-bottom-0 g-right-65" href="javascript:;"
+                               data-fancybox="lightbox-gallery--08"
+                               data-src="img-temp/600x450/img3.jpg"
+                               data-speed="350"
+                               data-caption="Lightbox Gallery">
+                                <i class="icon-size-fullscreen"></i>
+                            </a>
+                            <img class="img-fluid" src="img-temp/600x450/img3.jpg" alt="Image Description">
+                        </div>
+                        <div class="js-slide g-pos-rel">
+                            <a class="js-fancybox d-block u-icon-v3 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_6 g-bg-primary--hover g-color-white g-font-size-14 g-pos-abs g-bottom-0 g-right-65" href="javascript:;"
+                               data-fancybox="lightbox-gallery--08"
+                               data-src="img-temp/600x450/img2.jpg"
+                               data-speed="350"
+                               data-caption="Lightbox Gallery">
+                                <i class="icon-size-fullscreen"></i>
+                            </a>
+                            <img class="img-fluid" src="img-temp/600x450/img2.jpg" alt="Image Description">
+                        </div>
+                        <div class="js-slide g-pos-rel">
+                            <a class="js-fancybox d-block u-icon-v3 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_6 g-bg-primary--hover g-color-white g-font-size-14 g-pos-abs g-bottom-0 g-right-65" href="javascript:;"
+                               data-fancybox="lightbox-gallery--08"
+                               data-src="img-temp/600x450/img1.jpg"
+                               data-speed="350"
+                               data-caption="Lightbox Gallery">
+                                <i class="icon-size-fullscreen"></i>
+                            </a>
+                            <img class="img-fluid" src="img-temp/600x450/img1.jpg" alt="Image Description">
+                        </div>
+                    </div>
+                    <!-- Products - Carousel Image -->
+                    <div class="g-brd-x g-brd-gray-light-v3 g-bg-white">
+                        <!-- Products - List of Details -->
+                        <ul class="d-flex list-inline g-brd-y g-brd-gray-light-v3 mb-0">
+                            <li class="list-inline-item col-4 g-font-weight-500 g-font-size-13 text-center g-px-0 g-py-17 mr-0">
+                                <i class="align-middle g-color-text mr-1 icon-hotel-restaurant-022 u-line-icon-pro"></i>
+                                1 комната
+                            </li>
+                            <li class="list-inline-item col-4 g-font-weight-500 g-font-size-13 text-center g-px-0 g-brd-x g-brd-gray-light-v3 g-py-17 mr-0">
+                                <i class="align-middle g-color-text mr-1 icon-real-estate-033 u-line-icon-pro"></i>
+                                2 этаж
+                            </li>
+                            <li class="list-inline-item col-4 g-font-weight-500 g-font-size-13 text-center g-px-0 g-py-17 mr-0">
+                                <i class="align-middle g-color-text mr-1 icon-real-estate-047 u-line-icon-pro"></i>
+                                45 кв. м.
+                            </li>
+                        </ul>
+                        <!-- End Products - List of Details -->
+                        <!-- Products - Address -->
+                        <div class="g-pa-25">
+                            <h3 class="g-font-weight-600 g-font-size-16">Однокомнатная квартира 65 кв.м., ул. Космонавтов, д. 33</h3>
+                            <p class="g-font-size-13 mb-4">Сургут, пос. Солнечный</p>
+                            
+                            <p class="g-color-text g-font-weight-500 g-font-size-13 mb-0">Размещено: <span class="g-color-text g-font-weight-400">12 дней назад</a></p>
+                        </div>
+                        <!-- End Products - Address -->
+                        <!-- Products - List of Details -->
+                        <ul class="d-flex list-inline align-items-center g-brd-top g-brd-gray-light-v3 mb-0">
+                            <li class="list-inline-item col-8 g-font-weight-600 g-font-size-17 text-center g-px-0 g-py-13 mr-0">
+                                15 000 руб.<span class="g-font-size-13">/мес</span>
+                            </li>
+                            <li class="list-inline-item col-2 g-px-0 mr-0">
+                                <a class="d-block g-brd-x g-brd-gray-light-v3 g-color-text g-color-primary--hover g-font-weight-500 g-font-size-17 text-center g-text-underline--none--hover g-py-13" href="javascript:void(0);"
+                                   data-toggle="tooltip"
+                                   data-placement="top"
+                                   title="Добавить к сравнению">
+                                    <i class="icon-finance-149 u-line-icon-pro"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item col-2 g-px-0 mr-0">
+                                <a class="d-block g-color-text g-color-primary--hover g-font-weight-500 g-font-size-17 text-center g-text-underline--none--hover g-py-13" href="javascript:void(0);"
+                                   data-toggle="tooltip"
+                                   data-placement="top"
+                                   title="Отложить">
+                                    <i class="icon-medical-022 u-line-icon-pro"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- End Products - List of Details -->
+                    </div>
+                    <a class="btn btn-block g-brd-top-none g-brd-gray-light-v3 g-brd-primary--hover g-color-white--hover g-bg-secondary g-bg-primary-dark-v1--hover g-font-weight-600 rounded-0 g-px-18 g-py-15" href="page-single-item-1.html">
+                        Больше информации
+                        <i class="align-middle ml-2 fa fa-angle-right"></i>
+                    </a>
+                </article>
+                <!-- End Products -->
+            </div>
+            <div class="col-sm-6 col-lg-4 g-mb-30">
+                <!-- Products -->
+                <article>
+                    <!-- Products - Carousel Image -->
+                    <div class="js-carousel"
+                         data-infinite="true"
+                         data-arrows-classes="u-arrow-v1 g-pos-abs g-bottom-0 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_4 g-bg-primary--hover g-color-white"
+                         data-arrow-left-classes="fa fa-angle-left g-right-30 g-brd-right g-brd-white-opacity-0_1"
+                         data-arrow-right-classes="fa fa-angle-right g-right-0">
+                        <div class="js-slide g-pos-rel">
+                            <a class="js-fancybox d-block u-icon-v3 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_6 g-bg-primary--hover g-color-white g-font-size-14 g-pos-abs g-bottom-0 g-right-65" href="javascript:;"
+                               data-fancybox="lightbox-gallery--09"
+                               data-src="img-temp/600x450/img2.jpg"
+                               data-speed="350"
+                               data-caption="Lightbox Gallery">
+                                <i class="icon-size-fullscreen"></i>
+                            </a>
+                            <img class="img-fluid" src="img-temp/600x450/img2.jpg" alt="Image Description">
+                        </div>
+                        <div class="js-slide g-pos-rel">
+                            <a class="js-fancybox d-block u-icon-v3 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_6 g-bg-primary--hover g-color-white g-font-size-14 g-pos-abs g-bottom-0 g-right-65" href="javascript:;"
+                               data-fancybox="lightbox-gallery--09"
+                               data-src="img-temp/600x450/img5.jpg"
+                               data-speed="350"
+                               data-caption="Lightbox Gallery">
+                                <i class="icon-size-fullscreen"></i>
+                            </a>
+                            <img class="img-fluid" src="img-temp/600x450/img5.jpg" alt="Image Description">
+                        </div>
+                        <div class="js-slide g-pos-rel">
+                            <a class="js-fancybox d-block u-icon-v3 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_6 g-bg-primary--hover g-color-white g-font-size-14 g-pos-abs g-bottom-0 g-right-65" href="javascript:;"
+                               data-fancybox="lightbox-gallery--09"
+                               data-src="img-temp/600x450/img6.jpg"
+                               data-speed="350"
+                               data-caption="Lightbox Gallery">
+                                <i class="icon-size-fullscreen"></i>
+                            </a>
+                            <img class="img-fluid" src="img-temp/600x450/img6.jpg" alt="Image Description">
+                        </div>
+                    </div>
+                    <!-- Products - Carousel Image -->
+                    <div class="g-brd-x g-brd-gray-light-v3 g-bg-white">
+                        <!-- Products - List of Details -->
+                        <ul class="d-flex list-inline g-brd-y g-brd-gray-light-v3 mb-0">
+                            <li class="list-inline-item col-4 g-font-weight-500 g-font-size-13 text-center g-px-0 g-py-17 mr-0">
+                                <i class="align-middle g-color-text mr-1 icon-hotel-restaurant-022 u-line-icon-pro"></i>
+                                1 комната
+                            </li>
+                            <li class="list-inline-item col-4 g-font-weight-500 g-font-size-13 text-center g-px-0 g-brd-x g-brd-gray-light-v3 g-py-17 mr-0">
+                                <i class="align-middle g-color-text mr-1 icon-real-estate-033 u-line-icon-pro"></i>
+                                4 этаж
+                            </li>
+                            <li class="list-inline-item col-4 g-font-weight-500 g-font-size-13 text-center g-px-0 g-py-17 mr-0">
+                                <i class="align-middle g-color-text mr-1 icon-real-estate-047 u-line-icon-pro"></i>
+                                35 кв. м.
+                            </li>
+                        </ul>
+                        <!-- End Products - List of Details -->
+                        <!-- Products - Address -->
+                        <div class="g-pa-25">
+                            <h3 class="g-font-weight-600 g-font-size-16">Однокомнатная квартира 65 кв.м., ул. Космонавтов, д. 33</h3>
+                            <p class="g-font-size-13 mb-4">Сургут, пос. Солнечный</p>
+                            
+                            <p class="g-color-text g-font-weight-500 g-font-size-13 mb-0">Размещено: <span class="g-color-text g-font-weight-400">12 дней назад</a></p>
+                        </div>
+                        <!-- End Products - Address -->
+                        <!-- Products - List of Details -->
+                        <ul class="d-flex list-inline align-items-center g-brd-top g-brd-gray-light-v3 mb-0">
+                            <li class="list-inline-item col-8 g-font-weight-600 g-font-size-17 text-center g-px-0 g-py-13 mr-0">
+                                16 000 руб.<span class="g-font-size-13">/мес</span>
+                            </li>
+                            <li class="list-inline-item col-2 g-px-0 mr-0">
+                                <a class="d-block g-brd-x g-brd-gray-light-v3 g-color-text g-color-primary--hover g-font-weight-500 g-font-size-17 text-center g-text-underline--none--hover g-py-13" href="javascript:void(0);"
+                                   data-toggle="tooltip"
+                                   data-placement="top"
+                                   title="Добавить к сравнению">
+                                    <i class="icon-finance-149 u-line-icon-pro"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item col-2 g-px-0 mr-0">
+                                <a class="d-block g-color-text g-color-primary--hover g-font-weight-500 g-font-size-17 text-center g-text-underline--none--hover g-py-13" href="javascript:void(0);"
+                                   data-toggle="tooltip"
+                                   data-placement="top"
+                                   title="Отложить">
+                                    <i class="icon-medical-022 u-line-icon-pro"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- End Products - List of Details -->
+                    </div>
+                    <a class="btn btn-block g-brd-top-none g-brd-gray-light-v3 g-brd-primary--hover g-color-white--hover g-bg-secondary g-bg-primary-dark-v1--hover g-font-weight-600 rounded-0 g-px-18 g-py-15" href="page-single-item-1.html">
+                        Больше информации
+                        <i class="align-middle ml-2 fa fa-angle-right"></i>
+                    </a>
+                </article>
+                <!-- End Products -->
+            </div>
+            <div class="col-sm-6 col-lg-4 g-mb-30">
+                <!-- Products -->
+                <article>
+                    <!-- Products - Carousel Image -->
+                    <div class="js-carousel"
+                         data-infinite="true"
+                         data-arrows-classes="u-arrow-v1 g-pos-abs g-bottom-0 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_4 g-bg-primary--hover g-color-white"
+                         data-arrow-left-classes="fa fa-angle-left g-right-30 g-brd-right g-brd-white-opacity-0_1"
+                         data-arrow-right-classes="fa fa-angle-right g-right-0">
+                        <div class="js-slide g-pos-rel">
+                            <a class="js-fancybox d-block u-icon-v3 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_6 g-bg-primary--hover g-color-white g-font-size-14 g-pos-abs g-bottom-0 g-right-65" href="javascript:;"
+                               data-fancybox="lightbox-gallery--10"
+                               data-src="img-temp/600x450/img8.jpg"
+                               data-speed="350"
+                               data-caption="Lightbox Gallery">
+                                <i class="icon-size-fullscreen"></i>
+                            </a>
+                            <img class="img-fluid" src="img-temp/600x450/img8.jpg" alt="Image Description">
+                        </div>
+                        <div class="js-slide g-pos-rel">
+                            <a class="js-fancybox d-block u-icon-v3 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_6 g-bg-primary--hover g-color-white g-font-size-14 g-pos-abs g-bottom-0 g-right-65" href="javascript:;"
+                               data-fancybox="lightbox-gallery--10"
+                               data-src="img-temp/600x450/img7.jpg"
+                               data-speed="350"
+                               data-caption="Lightbox Gallery">
+                                <i class="icon-size-fullscreen"></i>
+                            </a>
+                            <img class="img-fluid" src="img-temp/600x450/img7.jpg" alt="Image Description">
+                        </div>
+                    </div>
+                    <!-- Products - Carousel Image -->
+                    <div class="g-brd-x g-brd-gray-light-v3 g-bg-white">
+                        <!-- Products - List of Details -->
+                        <ul class="d-flex list-inline g-brd-y g-brd-gray-light-v3 mb-0">
+                            <li class="list-inline-item col-4 g-font-weight-500 g-font-size-13 text-center g-px-0 g-py-17 mr-0">
+                                <i class="align-middle g-color-text mr-1 icon-hotel-restaurant-022 u-line-icon-pro"></i>
+                                2 комнаты
+                            </li>
+                            <li class="list-inline-item col-4 g-font-weight-500 g-font-size-13 text-center g-px-0 g-brd-x g-brd-gray-light-v3 g-py-17 mr-0">
+                                <i class="align-middle g-color-text mr-1 icon-real-estate-033 u-line-icon-pro"></i>
+                                3 этаж
+                            </li>
+                            <li class="list-inline-item col-4 g-font-weight-500 g-font-size-13 text-center g-px-0 g-py-17 mr-0">
+                                <i class="align-middle g-color-text mr-1 icon-real-estate-047 u-line-icon-pro"></i>
+                                55 кв. м.
+                            </li>
+                        </ul>
+                        <!-- End Products - List of Details -->
+                        <!-- Products - Address -->
+                        <div class="g-pa-25">
+                            <h3 class="g-font-weight-600 g-font-size-16">Двухкомнатная квартира 65 кв.м., ул. Космонавтов, д. 33</h3>
+                            <p class="g-font-size-13 mb-4">Сургут, пос. Солнечный</p>
+                            
+                            <p class="g-color-text g-font-weight-500 g-font-size-13 mb-0">Размещено: <span class="g-color-text g-font-weight-400">12 дней назад</a></p>
+                        </div>
+                        <!-- End Products - Address -->
+                        <!-- Products - List of Details -->
+                        <ul class="d-flex list-inline align-items-center g-brd-top g-brd-gray-light-v3 mb-0">
+                            <li class="list-inline-item col-8 g-font-weight-600 g-font-size-17 text-center g-px-0 g-py-13 mr-0">
+                                 20 000 руб.<span class="g-font-size-13">/мес</span>
+                            </li>
+                            <li class="list-inline-item col-2 g-px-0 mr-0">
+                                <a class="d-block g-brd-x g-brd-gray-light-v3 g-color-text g-color-primary--hover g-font-weight-500 g-font-size-17 text-center g-text-underline--none--hover g-py-13" href="javascript:void(0);"
+                                   data-toggle="tooltip"
+                                   data-placement="top"
+                                   title="Добавить к сравнению">
+                                    <i class="icon-finance-149 u-line-icon-pro"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item col-2 g-px-0 mr-0">
+                                <a class="d-block g-color-text g-color-primary--hover g-font-weight-500 g-font-size-17 text-center g-text-underline--none--hover g-py-13" href="javascript:void(0);"
+                                   data-toggle="tooltip"
+                                   data-placement="top"
+                                   title="Отложить">
+                                    <i class="icon-medical-022 u-line-icon-pro"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- End Products - List of Details -->
+                    </div>
+                    <a class="btn btn-block g-brd-top-none g-brd-gray-light-v3 g-brd-primary--hover g-color-white--hover g-bg-secondary g-bg-primary-dark-v1--hover g-font-weight-600 rounded-0 g-px-18 g-py-15" href="page-single-item-1.html">
+                        Больше информации
+                        <i class="align-middle ml-2 fa fa-angle-right"></i>
+                    </a>
+                </article>
+                <!-- End Products -->
+            </div>
+            <div class="col-sm-6 col-lg-4 g-mb-30">
+                <!-- Products -->
+                <article>
+                    <!-- Products - Carousel Image -->
+                    <div class="js-carousel"
+                         data-infinite="true"
+                         data-arrows-classes="u-arrow-v1 g-pos-abs g-bottom-0 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_4 g-bg-primary--hover g-color-white"
+                         data-arrow-left-classes="fa fa-angle-left g-right-30 g-brd-right g-brd-white-opacity-0_1"
+                         data-arrow-right-classes="fa fa-angle-right g-right-0">
+                        <div class="js-slide g-pos-rel">
+                            <a class="js-fancybox d-block u-icon-v3 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_6 g-bg-primary--hover g-color-white g-font-size-14 g-pos-abs g-bottom-0 g-right-65" href="javascript:;"
+                               data-fancybox="lightbox-gallery--11"
+                               data-src="img-temp/600x450/img16.jpg"
+                               data-speed="350"
+                               data-caption="Lightbox Gallery">
+                                <i class="icon-size-fullscreen"></i>
+                            </a>
+                            <img class="img-fluid" src="img-temp/600x450/img16.jpg" alt="Image Description">
+                        </div>
+                        <div class="js-slide g-pos-rel">
+                            <a class="js-fancybox d-block u-icon-v3 g-width-30 g-height-30 g-color-main g-bg-primary-opacity-0_6 g-bg-primary--hover g-color-white g-font-size-14 g-pos-abs g-bottom-0 g-right-65" href="javascript:;"
+                               data-fancybox="lightbox-gallery--11"
+                               data-src="img-temp/600x450/img17.jpg"
+                               data-speed="350"
+                               data-caption="Lightbox Gallery">
+                                <i class="icon-size-fullscreen"></i>
+                            </a>
+                            <img class="img-fluid" src="img-temp/600x450/img17.jpg" alt="Image Description">
+                        </div>
+                    </div>
+                    <!-- Products - Carousel Image -->
+                    <div class="g-brd-x g-brd-gray-light-v3 g-bg-white">
+                        <!-- Products - List of Details -->
+                        <ul class="d-flex list-inline g-brd-y g-brd-gray-light-v3 mb-0">
+                            <li class="list-inline-item col-4 g-font-weight-500 g-font-size-13 text-center g-px-0 g-py-17 mr-0">
+                                <i class="align-middle g-color-text mr-1 icon-hotel-restaurant-022 u-line-icon-pro"></i>
+                                2 комнаты
+                            </li>
+                            <li class="list-inline-item col-4 g-font-weight-500 g-font-size-13 text-center g-px-0 g-brd-x g-brd-gray-light-v3 g-py-17 mr-0">
+                                <i class="align-middle g-color-text mr-1 icon-real-estate-033 u-line-icon-pro"></i>
+                                3 этаж
+                            </li>
+                            <li class="list-inline-item col-4 g-font-weight-500 g-font-size-13 text-center g-px-0 g-py-17 mr-0">
+                                <i class="align-middle g-color-text mr-1 icon-real-estate-047 u-line-icon-pro"></i>
+                                60 кв. м.
+                            </li>
+                        </ul>
+                        <!-- End Products - List of Details -->
+                        <!-- Products - Address -->
+                        <div class="g-pa-25">
+                            <h3 class="g-font-weight-600 g-font-size-16">Двухкомнатная квартира 65 кв.м., ул. Космонавтов, д. 33</h3>
+                            <p class="g-font-size-13 mb-4">Сургут, пос. Солнечный</p>
+                            
+                            <p class="g-color-text g-font-weight-500 g-font-size-13 mb-0">Размещено: <span class="g-color-text g-font-weight-400">12 дней назад</a></p>
+                        </div>
+                        <!-- End Products - Address -->
+                        <!-- Products - List of Details -->
+                        <ul class="d-flex list-inline align-items-center g-brd-top g-brd-gray-light-v3 mb-0">
+                            <li class="list-inline-item col-8 g-font-weight-600 g-font-size-17 text-center g-px-0 g-py-13 mr-0">
+                                20 000 руб.<span class="g-font-size-13">/мес</span>
+                            </li>
+                            <li class="list-inline-item col-2 g-px-0 mr-0">
+                                <a class="d-block g-brd-x g-brd-gray-light-v3 g-color-text g-color-primary--hover g-font-weight-500 g-font-size-17 text-center g-text-underline--none--hover g-py-13" href="javascript:void(0);"
+                                   data-toggle="tooltip"
+                                   data-placement="top"
+                                   title="Добавить к сравнению">
+                                    <i class="icon-finance-149 u-line-icon-pro"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item col-2 g-px-0 mr-0">
+                                <a class="d-block g-color-text g-color-primary--hover g-font-weight-500 g-font-size-17 text-center g-text-underline--none--hover g-py-13" href="javascript:void(0);"
+                                   data-toggle="tooltip"
+                                   data-placement="top"
+                                   title="Отложить">
+                                    <i class="icon-medical-022 u-line-icon-pro"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- End Products - List of Details -->
+                    </div>
+                    <a class="btn btn-block g-brd-top-none g-brd-gray-light-v3 g-brd-primary--hover g-color-white--hover g-bg-secondary g-bg-primary-dark-v1--hover g-font-weight-600 rounded-0 g-px-18 g-py-15" href="page-single-item-1.html">
+                        Больше информации
+                        <i class="align-middle ml-2 fa fa-angle-right"></i>
+                    </a>
+                </article>
+                <!-- End Products -->
+            </div>
+        </div>
+        <div class="text-center">
+            <a class="btn g-color-text g-color-primary--hover g-bg-transparent g-font-weight-600 text-uppercase rounded-0" href="page-listing-1.html">
+                <span class="align-middle g-color-primary g-font-size-20 g-pos-rel g-top-minus-2 mr-2">&#43;</span>
+                Посмотреть все предложения
+            </a>
+        </div>
+    </div>
+    <!-- End Rent Products -->
+    <!-- Testimonials -->
+    <div class="g-bg-primary g-pos-rel">
+        <div class="container">
+            <div class="row justify-content-end align-items-center g-min-height-70vh">
+                <div class="col-lg-5 order-lg-2 align-self-center g-py-70 g-py-0--lg">
+                    <!-- Carousel - Text -->
+                    <div id="carouselCus1" class="js-carousel"
+                         data-infinite="true"
+                         data-fade="true"
+                         data-auto-height="auto"
+                         data-nav-for="#carouselCus2">
+                        <div class="js-slide">
+                            <blockquote class="g-color-white g-font-weight-600 g-font-size-26 mb-0">
+                                <div class="mb-5">
+                                    <span class="g-color-white-opacity-0_6 g-font-size-26">"</span>
+                                    Приобрели в агентстве Сургут Эстейт двухкомнатую квартиру. Отношение к клиентам на высшем уровне, помогли подобрать оптимальный вариант за наши деньги.
+                                    <span class="g-color-white-opacity-0_6 g-font-size-26">"</span>
+                                </div>
+                                <h4 class="g-color-white g-font-weight-600 mb-0">Ивановы, <span class="g-color-white-opacity-0_6 g-font-size-16">покупатель</span></h4>
+                            </blockquote>
+                        </div>
+                        <div class="js-slide">
+                            <blockquote class="g-color-white g-font-weight-600 g-font-size-26 mb-0">
+                                <div class="mb-5">
+                                    <span class="g-color-white-opacity-0_6 g-font-size-26">"</span>
+                                    Купил квартиру с хорошей скидкой, в хорошем районе. Спасибо.
+                                    <span class="g-color-white-opacity-0_6 g-font-size-26">"</span>
+                                </div>
+                                <h4 class="g-color-white g-font-weight-600 mb-0">Сергей, <span class="g-color-white-opacity-0_6 g-font-size-16">покупатель</span></h4>
+                            </blockquote>
+                        </div>
+                        @*<div class="js-slide">
+                            <blockquote class="g-color-white g-font-weight-600 g-font-size-26 mb-0">
+                                <div class="mb-5">
+                                    <span class="g-color-white-opacity-0_6 g-font-size-26">"</span>
+                                    Their enthusiasm, knowledge of the neighbourhood and marketing strategy were instrumental in getting a great price (over asking) in less than a week.
+                                    <span class="g-color-white-opacity-0_6 g-font-size-26">"</span>
+                                </div>
+                                <h4 class="g-color-white g-font-weight-600 mb-0">Joan, <span class="g-color-white-opacity-0_6 g-font-size-16">Customer</span></h4>
+                            </blockquote>
+                        </div>*@
+                    </div>
+                    <!-- End Carousel - Text -->
+                </div>
+                <div class="col-lg-6 order-lg-1 align-self-center g-pos-abs--lg g-top-0 g-left-0 g-pl-0">
+                    <!-- Carousel - Image -->
+                    <div id="carouselCus2" class="js-carousel"
+                         data-infinite="true"
+                         data-is-thumbs="true"
+                         data-nav-for="#carouselCus1"
+                         data-arrows-classes="u-arrow-v1 g-pos-abs g-top-0 g-width-40 g-height-40 g-color-white g-color-primary--hover g-bg-primary-dark-v1 g-bg-main--hover"
+                         data-arrow-left-classes="fa fa-angle-left g-right-40 g-brd-right g-brd-white-opacity-0_1"
+                         data-arrow-right-classes="fa fa-angle-right g-right-0">
+                        <div class="js-slide g-min-height-70vh g-bg-size-cover g-bg-pos-top-center" data-bg-img-src="img-temp/900x900/img1.jpg"></div>
+                        <div class="js-slide g-min-height-70vh g-bg-size-cover g-bg-pos-top-center" data-bg-img-src="img-temp/900x900/img2.jpg"></div>
+                        <div class="js-slide g-min-height-70vh g-bg-size-cover g-bg-pos-top-center" data-bg-img-src="img-temp/900x900/img3.jpg"></div>
+                    </div>
+                    <!-- End Carousel - Image -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Testimonials -->
+    <!-- New Buildings Products -->
+    <div class="container g-py-100">
+        <!-- Heading -->
+        <div class="text-center g-mb-50">
+            <span class="u-icon-v1 u-icon-size--xl g-color-primary"><i class="icon-real-estate-013 u-line-icon-pro"></i></span>
+            <h2>Новостройки</h2>
+        </div>
+        <!-- End Heading -->
+        <div class="row g-mb-40">
+            <div class="col-sm-6 col-lg-4 g-mb-30">
+                <!-- Products -->
+                <article>
+                    <img class="img-fluid" src="img-temp/600x450/img14.jpg" alt="Image Description">
+                    <div class="g-brd-x g-brd-gray-light-v3 g-bg-white">
+                        <!-- Products - Deadline -->
+                        <div class="g-brd-bottom g-brd-gray-light-v3 g-bg-secondary g-px-25 g-py-20">
+                            <span class="d-block g-font-weight-500 g-font-size-13">Сдача: март 2019</span>
+                        </div>
+                        <!-- End Products - Deadline -->
+                        <!-- Products - Address -->
+                        <div class="g-pa-25">
+                            <h3 class="g-font-weight-600 g-font-size-16">&#171;Мегакомплекс&#187;</h3>
+                            <p class="g-font-size-13 mb-4">Сургут, ул. Есенина</p>
+                            <!-- Products - List of Details -->
+                            <ul class="list-unstyled">
+                                <li class="g-brd-bottom--dashed g-brd-gray-light-v3 pt-1 mb-3">
+                                    <span class="g-font-weight-500 g-font-size-12">1 комн. <span class="g-color-text g-font-size-10">от</span> 30 кв. м.:</span>
+                                    <span class="float-right g-color-black"><span class="g-color-text g-font-size-10">от</span> 1 500 000 руб.</span>
+                                </li>
+                                <li class="g-brd-bottom--dashed g-brd-gray-light-v3 pt-1 mb-3">
+                                    <span class="g-font-weight-500 g-font-size-12">2 комн. <span class="g-color-text g-font-size-10">от</span> 48 кв. м.:</span>
+                                    <span class="float-right g-color-black"><span class="g-color-text g-font-size-10">от</span> 2 250 000 руб.</span>
+                                </li>
+                                <li class="g-brd-bottom--dashed g-brd-gray-light-v3 pt-1 mb-3">
+                                    <span class="g-font-weight-500 g-font-size-12">3 комн. <span class="g-color-text g-font-size-10">от</span> 67 кв. м.:</span>
+                                    <span class="float-right g-color-black"><span class="g-color-text g-font-size-10">от</span> 3 800 000 руб.</span>
+                                </li>
+                            </ul>
+                            <!-- End Products - List of Details -->
+                        </div>
+                        <!-- End Products - Address -->
+                        <!-- Products - List of Details -->
+                        <ul class="d-flex list-inline g-brd-y g-brd-gray-light-v3 mb-0">
+                            <li class="list-inline-item col-4 g-font-size-20 text-center g-px-0 g-py-13 mr-0">
+                                <i class="icon-real-estate-004 u-line-icon-pro"></i>
+                            </li>
+                            <li class="list-inline-item col-4 g-font-size-20 text-center g-px-0 g-brd-x g-brd-gray-light-v3 g-py-13 mr-0">
+                                <i class="icon-real-estate-064 u-line-icon-pro"></i>
+                            </li>
+                            <li class="list-inline-item col-4 g-color-gray-light-v3 g-font-size-20 text-center g-px-0 g-py-13 mr-0">
+                                <i class="icon-furniture-017 u-line-icon-pro"></i>
+                            </li>
+                        </ul>
+                        <!-- End Products - List of Details -->
+                    </div>
+                    <a class="btn btn-block g-brd-top-none g-brd-gray-light-v3 g-brd-primary--hover g-color-white--hover g-bg-secondary g-bg-primary-dark-v1--hover g-font-weight-600 rounded-0 g-px-18 g-py-15" href="page-single-item-1.html">
+                        Больше информации
+                        <i class="align-middle ml-2 fa fa-angle-right"></i>
+                    </a>
+                </article>
+                <!-- End Products -->
+            </div>
+            <div class="col-sm-6 col-lg-4 g-mb-30">
+                <!-- Products -->
+                <article>
+                    <img class="img-fluid" src="img-temp/600x450/img13.jpg" alt="Image Description">
+                    <div class="g-brd-x g-brd-gray-light-v3 g-bg-white">
+                        <!-- Products - Deadline -->
+                        <div class="g-brd-bottom g-brd-gray-light-v3 g-bg-secondary g-px-25 g-py-20">
+                            <span class="d-flex align-items-center g-font-weight-500 g-font-size-13">
+                                <span class="u-icon-v3 g-width-20 g-height-20 g-color-white g-bg-primary g-font-size-11 rounded-circle mr-2">
+                                    <i class="fa fa-check"></i>
+                                </span>
+                                Построен
+                            </span>
+                        </div>
+                        <!-- End Products - Deadline -->
+                        <!-- Products - Address -->
+                        <div class="g-pa-25">
+                            <h3 class="g-font-weight-600 g-font-size-16">&#171;Супер комплекс&#187;</h3>
+                            <p class="g-font-size-13 mb-4">Сургут, ул. Космонавтов</p>
+                            <!-- Products - List of Details -->
+                            <ul class="list-unstyled">
+                                <li class="g-brd-bottom--dashed g-brd-gray-light-v3 pt-1 mb-3">
+                                    <span class="g-font-weight-500 g-font-size-12">1 комн. <span class="g-color-text g-font-size-10">от</span> 33 кв. м.:</span>
+                                    <span class="float-right g-color-black"><span class="g-color-text g-font-size-10">от</span> 2 000 000 руб.</span>
+                                </li>
+                                <li class="g-brd-bottom--dashed g-brd-gray-light-v3 pt-1 mb-3">
+                                    <span class="g-font-weight-500 g-font-size-12">2 комн. <span class="g-color-text g-font-size-10">от</span> 48 кв. м.:</span>
+                                    <span class="float-right g-color-black"><span class="g-color-text g-font-size-10">от</span> 3 000 000 руб.</span>
+                                </li>
+                                <li class="g-brd-bottom--dashed g-brd-gray-light-v3 pt-1 mb-3">
+                                    <span class="g-font-weight-500 g-font-size-12">3 комн. <span class="g-color-text g-font-size-10">от</span> 65 кв. м.:</span>
+                                    <span class="float-right g-color-black"><span class="g-color-text g-font-size-10">от</span> 4 500 000 руб.</span>
+                                </li>
+                            </ul>
+                            <!-- End Products - List of Details -->
+                        </div>
+                        <!-- End Products - Address -->
+                        <!-- Products - List of Details -->
+                        <ul class="d-flex list-inline g-brd-y g-brd-gray-light-v3 mb-0">
+                            <li class="list-inline-item col-4 g-font-size-20 text-center g-px-0 g-py-13 mr-0">
+                                <i class="icon-real-estate-004 u-line-icon-pro"></i>
+                            </li>
+                            <li class="list-inline-item col-4 g-color-gray-light-v3 g-font-size-20 text-center g-px-0 g-brd-x g-brd-gray-light-v3 g-py-13 mr-0">
+                                <i class="icon-real-estate-064 u-line-icon-pro"></i>
+                            </li>
+                            <li class="list-inline-item col-4 g-color-gray-light-v3 g-font-size-20 text-center g-px-0 g-py-13 mr-0">
+                                <i class="icon-furniture-017 u-line-icon-pro"></i>
+                            </li>
+                        </ul>
+                        <!-- End Products - List of Details -->
+                    </div>
+                    <a class="btn btn-block g-brd-top-none g-brd-gray-light-v3 g-brd-primary--hover g-color-white--hover g-bg-secondary g-bg-primary-dark-v1--hover g-font-weight-600 rounded-0 g-px-18 g-py-15" href="page-single-item-1.html">
+                        Больше информации
+                        <i class="align-middle ml-2 fa fa-angle-right"></i>
+                    </a>
+                </article>
+                <!-- End Products -->
+            </div>
+            <div class="col-sm-6 col-lg-4 g-mb-30">
+                <!-- Products -->
+                <article>
+                    <img class="img-fluid" src="img-temp/600x450/img4.jpg" alt="Image Description">
+                    <div class="g-brd-x g-brd-gray-light-v3 g-bg-white">
+                        <!-- Products - Deadline -->
+                        <div class="g-brd-bottom g-brd-gray-light-v3 g-bg-secondary g-px-25 g-py-20">
+                            <span class="d-block g-font-weight-500 g-font-size-13">Сдача: декабрь 2019</span>
+                        </div>
+                        <!-- End Products - Deadline -->
+                        <!-- Products - Address -->
+                        <div class="g-pa-25">
+                            <h3 class="g-font-weight-600 g-font-size-16">&#171;Чудо город&#187;</h3>
+                            <p class="g-font-size-13 mb-4">Сургут</p>
+                            <!-- Products - List of Details -->
+                            <ul class="list-unstyled">
+                                <li class="g-brd-bottom--dashed g-brd-gray-light-v3 pt-1 mb-3">
+                                    <span class="g-font-weight-500 g-font-size-12">1 комн. <span class="g-color-text g-font-size-10">от</span> 32 кв. м.:</span>
+                                    <span class="float-right g-color-black"><span class="g-color-text g-font-size-10">от </span> 1 800 000 руб.</span>
+                                </li>
+                                <li class="g-brd-bottom--dashed g-brd-gray-light-v3 pt-1 mb-3">
+                                    <span class="g-font-weight-500 g-font-size-12">2 комн. <span class="g-color-text g-font-size-10">от</span> 57 кв. м.:</span>
+                                    <span class="float-right g-color-black"><span class="g-color-text g-font-size-10">от</span> 3 200 000 руб.</span>
+                                </li>
+                                <li class="g-brd-bottom--dashed g-brd-gray-light-v3 pt-1 mb-3">
+                                    <span class="g-font-weight-500 g-font-size-12">3 комн. <span class="g-color-text g-font-size-10">от</span> 81 кв. м.:</span>
+                                    <span class="float-right g-color-black"><span class="g-color-text g-font-size-10">от</span> 5 000 000 руб.</span>
+                                </li>
+                            </ul>
+                            <!-- End Products - List of Details -->
+                        </div>
+                        <!-- End Products - Address -->
+                        <!-- Products - List of Details -->
+                        <ul class="d-flex list-inline g-brd-y g-brd-gray-light-v3 mb-0">
+                            <li class="list-inline-item col-4 g-font-size-20 text-center g-px-0 g-py-13 mr-0">
+                                <i class="icon-real-estate-004 u-line-icon-pro"></i>
+                            </li>
+                            <li class="list-inline-item col-4 g-font-size-20 text-center g-px-0 g-brd-x g-brd-gray-light-v3 g-py-13 mr-0">
+                                <i class="icon-real-estate-064 u-line-icon-pro"></i>
+                            </li>
+                            <li class="list-inline-item col-4 g-font-size-20 text-center g-px-0 g-py-13 mr-0">
+                                <i class="icon-furniture-017 u-line-icon-pro"></i>
+                            </li>
+                        </ul>
+                        <!-- End Products - List of Details -->
+                    </div>
+                    <a class="btn btn-block g-brd-top-none g-brd-gray-light-v3 g-brd-primary--hover g-color-white--hover g-bg-secondary g-bg-primary-dark-v1--hover g-font-weight-600 rounded-0 g-px-18 g-py-15" href="page-single-item-1.html">
+                        Больше информации
+                        <i class="align-middle ml-2 fa fa-angle-right"></i>
+                    </a>
+                </article>
+                <!-- End Products -->
+            </div>
+        </div>
+        <div class="text-center">
+            <a class="btn g-color-text g-color-primary--hover g-bg-transparent g-font-weight-600 text-uppercase rounded-0" href="page-listing-1.html">
+                <span class="align-middle g-color-primary g-font-size-20 g-pos-rel g-top-minus-2 mr-2">&#43;</span>
+                Посмореть все предложения
+            </a>
+        </div>
+    </div>
+    <!-- End New Buildings Products -->
+    <!-- Call to Action -->
+    <div class="g-bg-primary g-py-100">
+        <div class="g-max-width-645 text-center mx-auto">
+            <div class="mb-5">
+                <h2 class="g-color-white g-font-weight-600">Смена места жительства – первый шаг к благоприятным изменениям</h2>
+            </div>
+            <span class="d-inline-block g-font-weight-600 text-uppercase mr-4">Позвоните нам</span>
+            <a class="btn u-btn-outline-white g-brd-2 g-color-main g-color-primary--hover g-bg-white--hover g-font-weight-600 g-font-size-12 text-uppercase rounded-0 g-px-25 g-py-13 mb-2" href="#">
+                +7 (3462) 123 45 67
+                <i class="g-pos-rel g-top-minus-1 ml-2 fa fa-angle-right"></i>
+            </a>
+            <span class="d-inline-block g-font-weight-600 text-uppercase mx-4">или</span>
+            <a class="btn u-btn-black g-brd-primary--hover g-color-primary g-color-main--hover g-bg-main g-bg-white--hover g-font-weight-600 g-font-size-12 text-uppercase rounded-0 g-px-25 g-py-13 mb-2" href="page-contacts-1.html">
+                Свяжитесь с нами
+                <i class="g-pos-rel g-top-minus-1 ml-2 fa fa-angle-right"></i>
+            </a>
+        </div>
+    </div>
+    <!-- End Call to Action -->
+</main>
+<!-- End Content -->

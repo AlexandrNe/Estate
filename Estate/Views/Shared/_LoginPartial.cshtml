@@ -1,5 +1,18 @@
 ﻿@using Microsoft.AspNet.Identity
-@if (Request.IsAuthenticated)
+
+
+<li class="list-inline-item">
+    <a class="u-link-v5 g-color-main g-color-white--hover g-bg-secondary g-bg-primary-dark-v1--hover g-font-weight-500 g-px-15 g-py-10" href="page-register-1.html">Регистрация</a>
+
+
+
+</li>
+<li class="list-inline-item">
+    <a class="u-link-v5 g-color-white g-bg-primary g-bg-primary-dark-v1--hover g-font-weight-500 g-px-15 g-py-10" href="page-login-1.html">Вход</a>
+</li>
+
+
+@*@if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("LogOff", "Account",new { Area="UserAccount"}, FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
@@ -19,4 +32,4 @@ else
         <li>@Html.ActionLink("Регистрация", "Register", "Account", routeValues: new { Area ="UserAccount"}, htmlAttributes: new { id = "registerLink" })</li>
         <li>@Html.ActionLink("Выполнить вход", "Login", "Account", routeValues: new { Area = "UserAccount" }, htmlAttributes: new { id = "loginLink" })</li>
     </ul>
-}
+}*@

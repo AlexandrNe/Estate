@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -26,6 +27,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,11 +47,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ErrorHandlerMvc, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ErrorHandlerMvc.1.1.5\lib\net451\ErrorHandlerMvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MvcSiteMapProvider, Version=4.6.26.0, Culture=neutral, PublicKeyToken=1923abe4657913cc, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvcSiteMapProvider.MVC5.Core.4.6.26\lib\net45\MvcSiteMapProvider.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvcSiteMapProvider.WebActivator, Version=4.6.26.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvcSiteMapProvider.MVC5.4.6.26\lib\net45\MvcSiteMapProvider.WebActivator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -102,6 +116,10 @@
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0.1\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -183,29 +201,224 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\assets\css\custom.css" />
+    <Content Include="Content\assets\css\styles.multipage-real-estate-blue.css" />
+    <Content Include="Content\assets\css\styles.multipage-real-estate.css" />
+    <Content Include="Content\assets\css\unify-components.css" />
+    <Content Include="Content\assets\css\unify-core.css" />
+    <Content Include="Content\assets\css\unify-globals.css" />
+    <Content Include="Content\assets\css\unify-style-switcher.css" />
+    <Content Include="Content\assets\css\unify.css" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\UserAccount\Views\web.config" />
     <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Mvc.sitemap" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="MvcSiteMapSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\PublishProfiles\reg.ru.pubxml" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\assets\js\components\hs.ajax-autocomplete.js" />
+    <Content Include="Scripts\assets\js\components\hs.autocomplete-local-search.js" />
+    <Content Include="Scripts\assets\js\components\hs.autocomplete.js" />
+    <Content Include="Scripts\assets\js\components\hs.bg-video.js" />
+    <Content Include="Scripts\assets\js\components\hs.carousel.js" />
+    <Content Include="Scripts\assets\js\components\hs.chart-pie.js" />
+    <Content Include="Scripts\assets\js\components\hs.chart.js" />
+    <Content Include="Scripts\assets\js\components\hs.count-qty.js" />
+    <Content Include="Scripts\assets\js\components\hs.countdown.js" />
+    <Content Include="Scripts\assets\js\components\hs.counter.js" />
+    <Content Include="Scripts\assets\js\components\hs.cubeportfolio.js" />
+    <Content Include="Scripts\assets\js\components\hs.datepicker-1.0.js" />
+    <Content Include="Scripts\assets\js\components\hs.datepicker.js" />
+    <Content Include="Scripts\assets\js\components\hs.dropdown.js" />
+    <Content Include="Scripts\assets\js\components\hs.file-attachement.js" />
+    <Content Include="Scripts\assets\js\components\hs.go-to.js" />
+    <Content Include="Scripts\assets\js\components\hs.header-fullscreen.js" />
+    <Content Include="Scripts\assets\js\components\hs.header-side.js" />
+    <Content Include="Scripts\assets\js\components\hs.header.js" />
+    <Content Include="Scripts\assets\js\components\hs.map.pin.js" />
+    <Content Include="Scripts\assets\js\components\hs.map.svg.js" />
+    <Content Include="Scripts\assets\js\components\hs.markup-copy.js" />
+    <Content Include="Scripts\assets\js\components\hs.masked-input.js" />
+    <Content Include="Scripts\assets\js\components\hs.modal-event.js" />
+    <Content Include="Scripts\assets\js\components\hs.modal-window.js" />
+    <Content Include="Scripts\assets\js\components\hs.navigation.js" />
+    <Content Include="Scripts\assets\js\components\hs.nl-form.js" />
+    <Content Include="Scripts\assets\js\components\hs.onscroll-animation.js" />
+    <Content Include="Scripts\assets\js\components\hs.popup-old.js" />
+    <Content Include="Scripts\assets\js\components\hs.popup.js" />
+    <Content Include="Scripts\assets\js\components\hs.progress-bar.js" />
+    <Content Include="Scripts\assets\js\components\hs.rating.js" />
+    <Content Include="Scripts\assets\js\components\hs.scroll-nav.js" />
+    <Content Include="Scripts\assets\js\components\hs.scrollbar.js" />
+    <Content Include="Scripts\assets\js\components\hs.select.js" />
+    <Content Include="Scripts\assets\js\components\hs.slider.js" />
+    <Content Include="Scripts\assets\js\components\hs.smart-menu.js" />
+    <Content Include="Scripts\assets\js\components\hs.step-form.js" />
+    <Content Include="Scripts\assets\js\components\hs.sticky-block.js" />
+    <Content Include="Scripts\assets\js\components\hs.tabs.js" />
+    <Content Include="Scripts\assets\js\components\hs.validation.js" />
+    <Content Include="Scripts\assets\js\components\hs.video-audio.js" />
+    <Content Include="Scripts\assets\js\custom.js" />
+    <Content Include="Scripts\assets\js\helpers\hs.bg-video.js" />
+    <Content Include="Scripts\assets\js\helpers\hs.compressed-form.js" />
+    <Content Include="Scripts\assets\js\helpers\hs.file-attachments.js" />
+    <Content Include="Scripts\assets\js\helpers\hs.focus-state.js" />
+    <Content Include="Scripts\assets\js\helpers\hs.hamburgers.js" />
+    <Content Include="Scripts\assets\js\helpers\hs.height-calc.js" />
+    <Content Include="Scripts\assets\js\helpers\hs.hover-blocks.js" />
+    <Content Include="Scripts\assets\js\helpers\hs.modal-markup.js" />
+    <Content Include="Scripts\assets\js\helpers\hs.navigation-splitted.js" />
+    <Content Include="Scripts\assets\js\helpers\hs.not-empty-state.js" />
+    <Content Include="Scripts\assets\js\helpers\hs.rating.js" />
+    <Content Include="Scripts\assets\js\helpers\hs.selecter.js" />
+    <Content Include="Scripts\assets\js\helpers\hs.shortcode-filter.js" />
+    <Content Include="Scripts\assets\js\hs.core.js" />
+    <Content Include="Scripts\assets\js\_js-classes.txt" />
+    <Content Include="Scripts\assets\vendor\chosen\chosen-sprite%402x.png" />
+    <Content Include="Scripts\assets\vendor\chosen\chosen-sprite.png" />
+    <Content Include="Scripts\assets\vendor\chosen\chosen.css" />
+    <Content Include="Scripts\assets\vendor\chosen\chosen.jquery.js" />
+    <Content Include="Scripts\assets\vendor\fancybox\jquery.fancybox.css" />
+    <Content Include="Scripts\assets\vendor\fancybox\jquery.fancybox.js" />
+    <Content Include="Scripts\assets\vendor\fancybox\jquery.fancybox.min.css" />
+    <Content Include="Scripts\assets\vendor\fancybox\jquery.fancybox.min.js" />
+    <Content Include="Scripts\assets\vendor\hs-megamenu\src\hs.megamenu.css" />
+    <Content Include="Scripts\assets\vendor\hs-megamenu\src\hs.megamenu.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\jquery-ui.core.min.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\jquery-ui.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\jquery-ui.min.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\core.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\data.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\disable-selection.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\effect.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\escape-selector.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\focusable.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\form-reset-mixin.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\form.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\ie.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\jquery-1-7.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\keycode.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\labels.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\plugin.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\position.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\safe-active-element.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\safe-blur.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\scroll-parent.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\tabbable.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\unique-id.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\version.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\widget.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\widgets\accordion.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\widgets\autocomplete.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\widgets\button.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\widgets\checkboxradio.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\widgets\controlgroup.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\widgets\datepicker.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\widgets\dialog.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\widgets\draggable.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\widgets\droppable.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\widgets\menu.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\widgets\mouse.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\widgets\progressbar.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\widgets\resizable.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\widgets\selectable.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\widgets\selectmenu.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\widgets\slider.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\widgets\sortable.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\widgets\spinner.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\widgets\tabs.js" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\widgets\tooltip.js" />
+    <Content Include="Scripts\assets\vendor\slick-carousel\index.html" />
+    <Content Include="Scripts\assets\vendor\slick-carousel\slick\ajax-loader.gif" />
+    <Content Include="Scripts\assets\vendor\slick-carousel\slick\fonts\slick.svg" />
+    <Content Include="Scripts\assets\vendor\slick-carousel\slick\slick-theme.css" />
+    <Content Include="Scripts\assets\vendor\slick-carousel\slick\slick.css" />
+    <Content Include="Scripts\assets\vendor\slick-carousel\slick\slick.js" />
+    <Content Include="Scripts\assets\vendor\slick-carousel\slick\slick.min.js" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\.bower.json" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\bower.json" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\component.json" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\composer.json" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\README.md" />
+    <Content Include="Scripts\assets\vendor\jquery-ui\ui\.jshintrc" />
+    <Content Include="Scripts\assets\vendor\slick-carousel\bower.json" />
+    <Content Include="Scripts\assets\vendor\slick-carousel\component.json" />
+    <Content Include="Scripts\assets\vendor\slick-carousel\CONTRIBUTING.markdown" />
+    <Content Include="Scripts\assets\vendor\slick-carousel\ISSUE_TEMPLATE.md" />
+    <Content Include="Scripts\assets\vendor\slick-carousel\LICENSE" />
+    <Content Include="Scripts\assets\vendor\slick-carousel\Makefile" />
+    <Content Include="Scripts\assets\vendor\slick-carousel\README.markdown" />
+    <Content Include="Scripts\assets\vendor\slick-carousel\slick.jquery.json" />
+    <Content Include="Scripts\assets\vendor\slick-carousel\slick\config.rb" />
+    <Content Include="Scripts\assets\vendor\slick-carousel\slick\slick-theme.less" />
+    <Content Include="Scripts\assets\vendor\slick-carousel\slick\slick-theme.scss" />
+    <Content Include="Scripts\assets\vendor\slick-carousel\slick\slick.less" />
+    <Content Include="Scripts\assets\vendor\slick-carousel\slick\slick.scss" />
+    <Content Include="Scripts\assets\vendor\slick-carousel\slick\fonts\slick.eot" />
+    <Content Include="Scripts\assets\vendor\slick-carousel\slick\fonts\slick.ttf" />
+    <Content Include="Scripts\assets\vendor\slick-carousel\slick\fonts\slick.woff" />
+    <Content Include="Scripts\assets\vendor\chosen\.bower.json" />
+    <Content Include="Scripts\assets\vendor\chosen\.travis.yml" />
+    <Content Include="Scripts\assets\vendor\chosen\bower.json" />
+    <Content Include="Scripts\assets\vendor\chosen\README.md" />
+    <None Include="Scripts\jquery-3.2.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.2.1.js" />
+    <Content Include="Scripts\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.2.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-migrate.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Shared\popper.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -240,6 +453,26 @@
     <Content Include="Areas\UserAccount\Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapTitleHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapPathHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapNodeModelList.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapNodeModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\MetaRobotsHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\MenuHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\CanonicalHelperModel.cshtml" />
+    <Content Include="Views\Shared\NotFound.cshtml" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -247,15 +480,30 @@
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Areas\UserAccount\Views\Shared\" />
+    <Folder Include="Content\assets\vendor\chosen\" />
+    <Folder Include="Content\assets\vendor\fancybox\" />
+    <Folder Include="Content\assets\vendor\hamburgers\" />
+    <Folder Include="Content\assets\vendor\hs-megamenu\src\" />
+    <Folder Include="Content\assets\vendor\icon-awesome\css\" />
+    <Folder Include="Content\assets\vendor\icon-hs\" />
+    <Folder Include="Content\assets\vendor\icon-line-pro\" />
+    <Folder Include="Content\assets\vendor\icon-line\css\" />
+    <Folder Include="Content\assets\vendor\slick-carousel\" />
+    <Folder Include="fonts\" />
+    <Folder Include="img-temp\600x550\" />
+    <Folder Include="img\" />
     <Folder Include="Models\" />
+    <Folder Include="Scripts\assets\vendor\jquery-ui\themes\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -265,6 +513,7 @@
     <ApplicationIcon>favicon.ico</ApplicationIcon>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
